@@ -1,0 +1,15 @@
+include: package:flutter_lints/flutter.yaml
+
+# Additional information about this file can be found at
+# https://dart.dev/guides/language/analysis-options
+analyzer:
+  strong-mode:
+    implicit-casts: false
+linter:
+  rules:
+    avoid_print: true
+    constant_identifier_names: true
+    prefer_const_constructors: false
+    file_names: true 
+    package_names: true 
+    prefer_single_quotes: true 
