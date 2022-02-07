@@ -1,39 +1,36 @@
-<!-- 
-This README describes the package. If you publish this package to pub.dev,
-this README's contents appear on the landing page for your package.
 
-For information about how to write a good package README, see the guide for
-[writing package pages](https://dart.dev/guides/libraries/writing-package-pages). 
+[![](https://img.shields.io/badge/for-GridView-green?style=for-the-badge)]()
+##  
+***
+> Use `both 1 and 2` for a `responsive gridview` 
+1) For responsive `grid item count` based on your static design `width`.
 
-For general information about developing packages, see the Dart guide for
-[creating packages](https://dart.dev/guides/libraries/create-library-packages)
-and the Flutter guide for
-[developing packages and plugins](https://flutter.dev/developing-packages). 
--->
-
-TODO: Put a short description of the package here that helps potential users
-know whether this package might be useful for them.
-
-## Features
-
-TODO: List what your package can do. Maybe include images, gifs, or videos.
-
-## Getting started
-
-TODO: List prerequisites and provide or point to information on how to
-start using the package.
-
-## Usage
-
-TODO: Include short and useful examples for package users. Add longer examples
-to `/example` folder. 
-
-```dart
-const like = 'sample';
-```
-
-## Additional information
-
-TODO: Tell users more about the package: where to find more information, how to 
-contribute to the package, how to file issues, what response they can expect 
-from the package authors, and more.
+    ```dart
+    crossAxisCount: getResCrosCountGrid(
+        context: context,
+        width: 180,
+    ),
+    ```
+2) For responsive grid item `aspect ratio` based on your static design `height` and `width`.
+    ```
+    childAspectRatio: getResGridRatio(
+        context: context,
+        height: 165,
+        width: 180,
+    ),
+    ```
+3) For normal grid `aspect ratio` 
+    > this will provide you aspect ratio whitch never barake in biger or smaller devise
+    ```
+    crossAxisCount: 2,
+    childAspectRatio: getGridRatio(
+        crossAxisCount: 2,
+        context: context,
+        height: 165,
+        width: 180,
+    ),
+    ```
+> Provide same `height` or `width` in both methods
+---
+[![](https://img.shields.io/badge/RΞPADΓΞCH-blue??style=plastic)](https://repadtech.com/)
+[![](https://img.shields.io/badge/@-oms-red??style=plastic)]()
