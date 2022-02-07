@@ -10,7 +10,8 @@
     ),
     ```
 2) For responsive grid item `aspect ratio` based on your static design `height` and `width`.
-    ```
+
+    ```dart
     childAspectRatio: getResGridRatio(
         context: context,
         height: 165,
@@ -19,7 +20,8 @@
     ```
 3) For normal grid `aspect ratio` 
     > this will provide you aspect ratio whitch never barake in biger or smaller devise
-    ```
+
+    ```dart
     crossAxisCount: 2,
     childAspectRatio: getGridRatio(
         crossAxisCount: 2,
@@ -30,5 +32,19 @@
     ```
 > Provide same `height` or `width` in both methods
 ---
+
+[![](https://img.shields.io/badge/for-color-green?style=for-the-badge)]()
+
+1)  Get color from hash code
+
+    ```dart
+    CHColor.fromHex('#fffff')
+    ```
+2) Get hash code from color
+
+    ```dart
+    CHColor(Color.fromRGBO(250, 250, 250, 0.1)).toHex()
+    ```
+***
 [![](https://img.shields.io/badge/RΞPADΓΞCH-blue??style=plastic)](https://repadtech.com/)
 [![](https://img.shields.io/badge/@-oms-red??style=plastic)]()

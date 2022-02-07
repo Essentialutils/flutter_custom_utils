@@ -7,3 +7,5 @@
 ## 0.0.4
 * bug fix
 * updates
+## 0.0.5
+* updates
