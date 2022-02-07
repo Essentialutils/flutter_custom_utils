@@ -1,7 +1,5 @@
 
 [![](https://img.shields.io/badge/for-GridView-green?style=for-the-badge)]()
-##  
-***
 > Use `both 1 and 2` for a `responsive gridview` 
 1) For responsive `grid item count` based on your static design `width`.
 
