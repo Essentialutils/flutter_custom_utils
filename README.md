@@ -43,8 +43,9 @@
 2) Get hash code from color
 
     ```dart
-    CHColor(Color.fromRGBO(250, 250, 250, 0.1)).toHex()
+    Color.fromRGBO(250, 250, 250, 0.1).toHex()
     ```
+
 ***
 [![](https://img.shields.io/badge/RΞPADΓΞCH-blue??style=plastic)](https://repadtech.com/)
 [![](https://img.shields.io/badge/@-oms-red??style=plastic)]()
