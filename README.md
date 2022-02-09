@@ -1,4 +1,12 @@
 
+[![](https://img.shields.io/badge/for-MediaQuery-green?style=for-the-badge)]()
+
+1) get MediaQuery size
+
+    ```dart
+    getSize(context)
+    ```
+---
 [![](https://img.shields.io/badge/for-GridView-green?style=for-the-badge)]()
 > Use `both 1 and 2` for a `responsive gridview` 
 1) For responsive `grid item count` based on your static design `width`.
@@ -45,7 +53,61 @@
     ```dart
     Color.fromRGBO(250, 250, 250, 0.1).toHex()
     ```
+---
+[![](https://img.shields.io/badge/for-widgget-green?style=for-the-badge)]()
 
+1) All `(padding/margin)`
+
+    ```dart
+    @override
+    Widget build(BuildContext context) {
+        return Container(
+        child: Text('data').padAll(10) // margAll 
+        );
+    }
+    ```
+2) Only `(padding/margin)`
+
+    ```dart
+    @override
+    Widget build(BuildContext context) {
+        return Container(
+            child: Text('data').padOnly(
+                l: 10,
+                r: 10,
+                t: 10,
+                b: 10,
+            ), // margOnly
+        );
+    }
+    ```
+3) Symmetric `(padding/margin)`
+
+    ```dart
+    @override
+    Widget build(BuildContext context) {
+        return Container(
+            child: Text('data').padSymmetric(
+                h: 10,
+                v: 10,
+            ), // margSymmetric
+        );
+    }
+    ```
+4) Zero `(padding/margin)`
+
+    ```dart
+    @override
+    Widget build(BuildContext context) {
+        return Container(
+        child: Text('data').padZero, // margZero
+        );
+    }
+    ```
+5) Allows you to insert widgets inside a `CustomScrollView`
+    ```dart
+    Text('data').sliverToBox
+    ```
 ***
 [![](https://img.shields.io/badge/RΞPADΓΞCH-blue??style=plastic)](https://repadtech.com/)
 [![](https://img.shields.io/badge/@-oms-red??style=plastic)]()

@@ -13,7 +13,7 @@ int getResCrosCountGrid({
   required BuildContext context,
   required int width,
 }) {
-  int count = (MediaQuery.of(context).size.width / width).round();
+  int count = (getSize(context).width / width).round();
   cLog('GridCount => $count');
   return count;
 }
@@ -30,10 +30,9 @@ double getResGridRatio({
   required int height,
   required int width,
 }) {
-  double w = (MediaQuery.of(context).size.width /
-      (MediaQuery.of(context).size.width / width).round());
-  double h = (MediaQuery.of(context).size.width /
-      (MediaQuery.of(context).size.width / width));
+  double w =
+      (getSize(context).width / (getSize(context).width / width).round());
+  double h = (getSize(context).width / (getSize(context).width / width));
   double asr = w / (h - (width - height));
   cLog('GridAspectRatio => $asr');
   return asr;
@@ -54,10 +53,16 @@ double getGridRatio({
   required int height,
   required int width,
 }) {
-  double w = (MediaQuery.of(context).size.width / crossAxisCount);
-  double h = (MediaQuery.of(context).size.width /
-      (MediaQuery.of(context).size.width / width));
+  double w = (getSize(context).width / crossAxisCount);
+  double h = (getSize(context).width / (getSize(context).width / width));
   double asr = w / (h - (width - height));
   cLog('GridAspectRatio => $asr');
   return asr;
+}
+
+///
+/// get MediaQuery size
+///
+Size getSize(BuildContext context) {
+  return MediaQuery.of(context).size;
 }
