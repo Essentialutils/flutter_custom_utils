@@ -4,7 +4,12 @@ include: package:flutter_lints/flutter.yaml
 # https://dart.dev/guides/language/analysis-options
 analyzer:
   strong-mode:
-    implicit-casts: false
+    implicit-casts: true
+
+  errors: 
+    file_names: error 
+    package_names: error 
+
 linter:
   rules:
     avoid_print: true
