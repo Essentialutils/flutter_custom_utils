@@ -62,7 +62,7 @@
     @override
     Widget build(BuildContext context) {
         return Container(
-        child: Text('data').padAll(10) // margAll 
+        child: Text('data').cPadAll(10) // cMargAll 
         );
     }
     ```
@@ -72,12 +72,12 @@
     @override
     Widget build(BuildContext context) {
         return Container(
-            child: Text('data').padOnly(
+            child: Text('data').cPadOnly(
                 l: 10,
                 r: 10,
                 t: 10,
                 b: 10,
-            ), // margOnly
+            ), // cMargOnly
         );
     }
     ```
@@ -87,10 +87,10 @@
     @override
     Widget build(BuildContext context) {
         return Container(
-            child: Text('data').padSymmetric(
+            child: Text('data').cPadSymmetric(
                 h: 10,
                 v: 10,
-            ), // margSymmetric
+            ), // cMargSymmetric
         );
     }
     ```
@@ -100,13 +100,13 @@
     @override
     Widget build(BuildContext context) {
         return Container(
-        child: Text('data').padZero, // margZero
+        child: Text('data').cPadZero, // cMargZero
         );
     }
     ```
 5) Allows you to insert widgets inside a `CustomScrollView`
     ```dart
-    Text('data').sliverToBox
+    Text('data').cSliverToBox
     ```
 ***
 [![](https://img.shields.io/badge/RΞPADΓΞCH-blue??style=plastic)](https://repadtech.com/)

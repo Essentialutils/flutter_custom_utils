@@ -4,12 +4,12 @@ import 'package:flutter/widgets.dart';
 /// add Padding Property to widget
 ///
 extension CustomWidgetPadding on Widget {
-  Widget padAll(double padding) => Padding(
+  Widget cPadAll(double padding) => Padding(
         padding: EdgeInsets.all(padding),
         child: this,
       );
 
-  Widget padSymmetric({
+  Widget cPadSymmetric({
     double h = 0.0,
     double v = 0.0,
   }) =>
@@ -21,7 +21,7 @@ extension CustomWidgetPadding on Widget {
         child: this,
       );
 
-  Widget padOnly({
+  Widget cPadOnly({
     double l = 0.0,
     double t = 0.0,
     double r = 0.0,
@@ -37,7 +37,7 @@ extension CustomWidgetPadding on Widget {
         child: this,
       );
 
-  Widget get padZero => Padding(
+  Widget get cPadZero => Padding(
         padding: EdgeInsets.zero,
         child: this,
       );
@@ -47,12 +47,12 @@ extension CustomWidgetPadding on Widget {
 /// Add margin property to widget
 ///
 extension CustomWidgetMargin on Widget {
-  Widget margAll(double margin) => Container(
+  Widget cMargAll(double margin) => Container(
         margin: EdgeInsets.all(margin),
         child: this,
       );
 
-  Widget margSymmetric({
+  Widget cMargSymmetric({
     double h = 0.0,
     double v = 0.0,
   }) =>
@@ -64,7 +64,7 @@ extension CustomWidgetMargin on Widget {
         child: this,
       );
 
-  Widget margOnly({
+  Widget cMargOnly({
     double l = 0.0,
     double t = 0.0,
     double r = 0.0,
@@ -80,7 +80,7 @@ extension CustomWidgetMargin on Widget {
         child: this,
       );
 
-  Widget get margZero => Container(
+  Widget get cMargZero => Container(
         margin: EdgeInsets.zero,
         child: this,
       );
@@ -90,7 +90,7 @@ extension CustomWidgetMargin on Widget {
 /// Allows you to insert widgets inside a CustomScrollView
 ///
 extension CustomWidgetSliverBox on Widget {
-  Widget get sliverToBox => SliverToBoxAdapter(
+  Widget get cSliverToBox => SliverToBoxAdapter(
         child: this,
       );
 }
