@@ -4,17 +4,16 @@ include: package:flutter_lints/flutter.yaml
 # https://dart.dev/guides/language/analysis-options
 analyzer:
   strong-mode:
-    implicit-casts: true
-
+    implicit-casts: true 
   errors: 
     file_names: error 
     package_names: error 
-
 linter:
   rules:
-    avoid_print: true
-    constant_identifier_names: true
-    prefer_const_constructors: false
+    avoid_print: true 
+    constant_identifier_names: true 
+    prefer_const_constructors: false 
     file_names: true 
     package_names: true 
     prefer_single_quotes: true 
+    require_trailing_commas: true 
