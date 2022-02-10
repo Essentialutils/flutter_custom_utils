@@ -94,3 +94,18 @@ extension CustomWidgetSliverBox on Widget {
         child: this,
       );
 }
+
+///
+/// Allows you to handle Visibility and Opacity
+///
+extension CustomWidgetVisibility on Widget {
+  Widget cVisible(bool visible) => Visibility(
+        visible: visible,
+        child: this,
+      );
+
+  Widget cOpacity(double opacity) => Opacity(
+        opacity: opacity,
+        child: this,
+      );
+}

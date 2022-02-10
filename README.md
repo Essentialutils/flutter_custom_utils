@@ -108,6 +108,12 @@
     ```dart
     Text('data').cSliverToBox
     ```
+6) Allows you to handle `Visibility` and `Opacity`
+    ```dart
+    Text('data').cVisible(true)
+
+    Text('data').cOpacity(0.3)
+    ```
 ***
 [![](https://img.shields.io/badge/RΞPADΓΞCH-blue??style=plastic)](https://repadtech.com/)
 [![](https://img.shields.io/badge/@-oms-red??style=plastic)]()
