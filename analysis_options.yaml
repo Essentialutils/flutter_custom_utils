@@ -8,6 +8,8 @@ analyzer:
   errors: 
     file_names: error 
     package_names: error 
+    avoid_relative_lib_imports: error 
+    always_use_package_imports: error 
 linter:
   rules:
     avoid_print: true 
@@ -17,3 +19,5 @@ linter:
     package_names: true 
     prefer_single_quotes: true 
     require_trailing_commas: true 
+    avoid_relative_lib_imports: true 
+    always_use_package_imports: true 

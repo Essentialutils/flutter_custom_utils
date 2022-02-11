@@ -1,3 +1,6 @@
+///
+/// Tools for working with strings
+///
 extension StringCasingExtension on String {
   String toCapitalized() =>
       length > 0 ? '${this[0].toUpperCase()}${substring(1).toLowerCase()}' : '';
@@ -22,21 +25,16 @@ extension StringCasingExtension on String {
     return String.fromCharCodes(str.runes.toList().reversed);
   }
 
-  bool isDigit() {
-    String str = this;
-    if (str.isEmpty) {
+  static bool isNull(dynamic value) => value == null;
+
+  ///
+  /// Check if it is a numeric value
+  ///
+  bool isNum() {
+    if (isNull(this)) {
       return false;
     }
-    if (str.length > 1) {
-      for (var d in str.runes) {
-        if (d ^ 0x30 > 9) {
-          return false;
-        }
-      }
-      return true;
-    } else {
-      return str.runes.first ^ 0x30 <= 9;
-    }
+    return num.tryParse(this) is num;
   }
 
   bool isPalindrome() {
@@ -55,12 +53,6 @@ extension StringCasingExtension on String {
     return regExp.hasMatch(str);
   }
 
-  bool isDigitOnly() {
-    String str = this;
-    RegExp _numeric = RegExp(r'^-?[0-9]+$');
-    return _numeric.hasMatch(str);
-  }
-
   bool isAlphabetOnly() {
     RegExp reg = RegExp(r'^[a-zA-Z]+$');
     return reg.hasMatch(this);
@@ -68,6 +60,6 @@ extension StringCasingExtension on String {
 
   bool isPhoneIND() {
     String str = this;
-    return str.length == 10 && str.isDigit();
+    return str.length == 10 && str.isNum();
   }
 }
