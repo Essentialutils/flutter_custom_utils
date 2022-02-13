@@ -1,15 +1,15 @@
 
 [![](https://img.shields.io/badge/for-MediaQuery-green?style=for-the-badge)]()
 
-1) get MediaQuery size
+1) Get the MediaQuery size
 
     ```dart
     getSize(context)
     ```
 ---
 [![](https://img.shields.io/badge/for-GridView-green?style=for-the-badge)]()
-> Use `both 1 and 2` for a `responsive gridview` 
-1) For responsive `grid item count` based on your static design `width`.
+> Make a `responsive gridview` by using both `1 and 2` 
+1) Based on your static design's `width`, calculate the responsive `grid item count`.
 
     ```dart
     crossAxisCount: getResCrosCountGrid(
@@ -17,7 +17,7 @@
         width: 180,
     ),
     ```
-2) For responsive grid item `aspect ratio` based on your static design `height` and `width`.
+2) For responsive grid item `aspect ratio`, it should be derived from your static design based on `height` and `width`.
 
     ```dart
     childAspectRatio: getResGridRatio(
@@ -27,7 +27,7 @@
     ),
     ```
 3) For normal grid `aspect ratio` 
-    > this will provide you aspect ratio whitch never barake in biger or smaller devise
+    > Having this aspect ratio will never break in larger or smaller devices
 
     ```dart
     crossAxisCount: 2,
@@ -38,7 +38,7 @@
         width: 180,
     ),
     ```
-> Provide same `height` or `width` in both methods
+> Your provided `height` and `width` determine how it works
 ---
 
 [![](https://img.shields.io/badge/for-color-green?style=for-the-badge)]()
@@ -115,5 +115,8 @@
     Text('data').cOpacity(0.3)
     ```
 ***
-[![](https://img.shields.io/badge/RΞPADΓΞCH-blue??style=plastic)](https://repadtech.com/)
-[![](https://img.shields.io/badge/@-oms-red??style=plastic)]()
+[![](https://img.shields.io/badge/From-RΞPADΓΞCH-blue??style=plastic)](https://repadtech.com/)
+[![](https://img.shields.io/badge/@-oms-red??style=plastic)]() [![](https://img.shields.io/badge/@-dc-red??style=plastic)]()
+
+
+

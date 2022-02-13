@@ -1,7 +1,5 @@
-library flutter_custom_utils;
-
 import 'package:flutter/widgets.dart';
-import 'package:flutter_custom_utils/util/utils.dart';
+import 'package:flutter_custom_utils/flutter_custom_utils.dart';
 
 ///
 /// GridView responsive item [crossAxisCount]

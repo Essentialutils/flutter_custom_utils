@@ -1,65 +1,59 @@
 ///
-/// Tools for working with strings
+/// A set of extensions for working with strings
 ///
 extension StringCasingExtension on String {
-  String toCapitalized() =>
+  String cToCapitalized() =>
       length > 0 ? '${this[0].toUpperCase()}${substring(1).toLowerCase()}' : '';
 
-  String toTitleCase() => replaceAll(RegExp(' +'), ' ')
+  String cToTitleCase() => replaceAll(RegExp(' +'), ' ')
       .split(' ')
-      .map((str) => str.toCapitalized())
+      .map((str) => str.cToCapitalized())
       .join(' ');
 
-  bool isLowerCase() {
+  bool cIsLowerCase() {
     String str = this;
     return str == str.toLowerCase();
   }
 
-  bool isUpperCase() {
-    String str = this;
-    return str == str.toUpperCase();
+  ///
+  /// Checks if a string has all capital letters.
+  ///
+  bool cIsAllCap() {
+    return this == (this).toUpperCase();
   }
 
-  String reverse() {
-    String str = this;
-    return String.fromCharCodes(str.runes.toList().reversed);
+  String cReverse() {
+    return String.fromCharCodes((this).runes.toList().reversed);
   }
 
-  static bool isNull(dynamic value) => value == null;
+  static bool cIsNull(dynamic value) => value == null;
 
   ///
-  /// Check if it is a numeric value
+  /// Checks if string is int or double.
   ///
-  bool isNum() {
-    if (isNull(this)) {
+  bool cIsDigit() {
+    if (cIsNull(this)) {
       return false;
     }
     return num.tryParse(this) is num;
   }
 
-  bool isPalindrome() {
-    String str = this;
-    for (var i = 0; i < str.length / 2; i++) {
-      if (str[i] != str[str.length - 1 - i]) return false;
-    }
-    return true;
-  }
-
-  bool isEmail() {
-    String str = this;
+  ///
+  /// Checks if string is email.
+  ///
+  bool cIsEmail() {
     var emailRegex =
-        '^([\\w\\d\\-\\+]+)(\\.+[\\w\\d\\-\\+%]+)*@([\\w\\-]+\\.){1,5}(([A-Za-z]){2,30}|xn--[A-Za-z0-9]{1,26})\$';
-    var regExp = RegExp(emailRegex);
-    return regExp.hasMatch(str);
+        r'^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$';
+    return RegExp(emailRegex).hasMatch(this);
   }
 
-  bool isAlphabetOnly() {
+  bool cIsAlphabetOnly() {
     RegExp reg = RegExp(r'^[a-zA-Z]+$');
     return reg.hasMatch(this);
   }
 
-  bool isPhoneIND() {
+  bool cIsPhoneIND() {
     String str = this;
-    return str.length == 10 && str.isNum();
+    return str.length == 10 && str.cIsDigit();
   }
 }

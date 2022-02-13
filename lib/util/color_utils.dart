@@ -1,5 +1,3 @@
-library color_utils;
-
 import 'package:flutter/widgets.dart';
 
 extension CHColor on Color {

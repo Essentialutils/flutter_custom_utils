@@ -1,5 +1,3 @@
-library custom_dev_util;
-
 import 'dart:developer';
 
 void cLog(
