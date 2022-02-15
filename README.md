@@ -1,10 +1,20 @@
 
 [![](https://img.shields.io/badge/for-MediaQuery-green?style=for-the-badge)]()
 
-1) Get the MediaQuery size
+1) Get the MediaQuery
 
     ```dart
-    getSize(context)
+    context.cMediaQuerySize   // getSize(context)
+    context.cWidth 
+    context.cHeight
+    context.cTheme
+    context.cIsDarkMode
+    context.cIconColor
+    context.cTextTheme
+    context.cOrient   // orientation
+    context.cIsLand   // landscape
+    context.cIsPort   // portrait
+    context.cDevicePixelRatio
     ```
 ---
 [![](https://img.shields.io/badge/for-GridView-green?style=for-the-badge)]()
@@ -113,6 +123,12 @@
     Text('data').cVisible(true)
 
     Text('data').cOpacity(0.3)
+    ```
+7) Allows you to handle Alignment
+    ```dart
+    Text('data').cAlignment(Alignment.topCenter)
+
+    Text('data').cToCenter()
     ```
 ***
 [![](https://img.shields.io/badge/From-RΞPADΓΞCH-blue??style=plastic)](https://repadtech.com/)

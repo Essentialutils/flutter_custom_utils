@@ -41,7 +41,7 @@ extension ContextExt on BuildContext {
   ///
   /// similar to [MediaQuery.of(context).orientation]
   ///
-  Orientation get orient => MediaQuery.of(this).orientation;
+  Orientation get cOrient => MediaQuery.of(this).orientation;
 
   ///
   /// check if device is on landscape mode
@@ -57,9 +57,11 @@ extension ContextExt on BuildContext {
   /// similar to [MediaQuery.of(this).devicePixelRatio]
   ///
   double get cDevicePixelRatio => MediaQuery.of(this).devicePixelRatio;
+}
 
-  ///
-  /// similar to [MediaQuery.of(this).textScaleFactor]
-  ///
-  double get textScaleFactor => MediaQuery.of(this).textScaleFactor;
+///
+/// get MediaQuery size 
+///
+Size getSize(BuildContext context) {
+  return MediaQuery.of(context).size;
 }

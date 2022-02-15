@@ -90,7 +90,7 @@ extension CustomWidgetMargin on Widget {
 /// Allows you to insert widgets inside a CustomScrollView
 ///
 extension CustomWidgetSliverBox on Widget {
-  Widget get cSliverToBox => SliverToBoxAdapter(
+  Widget get cToSliver => SliverToBoxAdapter(
         child: this,
       );
 }
@@ -106,6 +106,19 @@ extension CustomWidgetVisibility on Widget {
 
   Widget cOpacity(double opacity) => Opacity(
         opacity: opacity,
+        child: this,
+      );
+}
+
+///
+/// Allows you to handle alignment
+///
+extension CustomWidetPosition on Widget {
+  Widget cToCenter() => Center(
+        child: this,
+      );
+  Widget cAlignment(AlignmentGeometry align) => Align(
+        alignment: align,
         child: this,
       );
 }
