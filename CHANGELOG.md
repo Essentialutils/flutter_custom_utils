@@ -21,3 +21,5 @@
 * updates
 ## 0.1.1
 * updates
+## 0.1.2
+* updates

@@ -1,4 +1,14 @@
+[![](https://img.shields.io/badge/for-duration,_delay-green?style=for-the-badge)]()
 
+1) For duration and delay
+    
+    ```dart
+        void main() async {
+            await 0.7.cSeconds.cDelay(() {})
+        }
+    ```
+
+***
 [![](https://img.shields.io/badge/for-MediaQuery-green?style=for-the-badge)]()
 
 1) Get the MediaQuery
