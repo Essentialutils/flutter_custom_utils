@@ -128,7 +128,7 @@
     ```dart
     Text('data').cAlignment(Alignment.topCenter)
 
-    Text('data').cToCenter()
+    Text('data').cToCenter
     ```
 ***
 [![](https://img.shields.io/badge/From-RΞPADΓΞCH-blue??style=plastic)](https://repadtech.com/)

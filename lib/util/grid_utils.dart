@@ -28,8 +28,7 @@ double getResGridRatio({
   required int height,
   required int width,
 }) {
-  double w =
-      (context.cWidth / (context.cWidth / width).round());
+  double w = (context.cWidth / (context.cWidth / width).round());
   double h = (context.cWidth / (context.cWidth / width));
   double asr = w / (h - (width - height));
   cLog('GridAspectRatio => $asr');

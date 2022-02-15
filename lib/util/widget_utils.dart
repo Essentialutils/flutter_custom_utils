@@ -114,7 +114,7 @@ extension CustomWidgetVisibility on Widget {
 /// Allows you to handle alignment
 ///
 extension CustomWidetPosition on Widget {
-  Widget cToCenter() => Center(
+  Widget get cToCenter => Center(
         child: this,
       );
   Widget cAlignment(AlignmentGeometry align) => Align(

@@ -60,7 +60,7 @@ extension ContextExt on BuildContext {
 }
 
 ///
-/// get MediaQuery size 
+/// get MediaQuery size
 ///
 Size getSize(BuildContext context) {
   return MediaQuery.of(context).size;
