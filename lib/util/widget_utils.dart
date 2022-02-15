@@ -121,4 +121,8 @@ extension CustomWidetPosition on Widget {
         alignment: align,
         child: this,
       );
+  Widget cExpanded(int flex) => Expanded(
+        child: this,
+        flex: flex,
+      );
 }
