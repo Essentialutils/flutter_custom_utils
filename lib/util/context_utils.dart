@@ -4,7 +4,7 @@ extension ContextExt on BuildContext {
   ///
   /// The same of [MediaQuery.of(context).size]
   ///
-  Size get cMediaQuerySize => MediaQuery.of(this).size;
+  Size get cSize => MediaQuery.of(this).size;
 
   ///
   /// The same of [MediaQuery.of(context).size.height]

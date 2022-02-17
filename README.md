@@ -3,8 +3,10 @@
 1) For duration and delay
     
     ```dart
-        void main() async {
-            await 0.7.cSeconds.cDelay(() {})
+        void splash() {
+            2.cSeconds.cDelay(() {
+                // code here
+            });
         }
     ```
 
@@ -14,7 +16,7 @@
 1) Get the MediaQuery
 
     ```dart
-    context.cMediaQuerySize   // getSize(context)
+    context.cSize   // getSize(context)
     context.cWidth 
     context.cHeight
     context.cTheme
