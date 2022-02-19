@@ -131,7 +131,7 @@ extension CustomWidetPosition on Widget {
 /// PreferredSize
 ///
 extension CustomWidetPreferSize on Widget {
-  Widget cPreferSize(double h) => PreferredSize(
+  PreferredSizeWidget cPreferSize(double h) => PreferredSize(
         child: this,
         preferredSize: Size.fromHeight(h),
       );
