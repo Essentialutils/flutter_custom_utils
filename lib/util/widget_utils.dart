@@ -126,3 +126,13 @@ extension CustomWidetPosition on Widget {
         flex: flex,
       );
 }
+
+///
+/// PreferredSize
+///
+extension CustomWidetPreferSize on Widget {
+  Widget cPreferSize(double h) => PreferredSize(
+        child: this,
+        preferredSize: Size.fromHeight(h),
+      );
+}

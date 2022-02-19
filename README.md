@@ -141,6 +141,10 @@
     Text('data').cToCenter
     Text('data').cExpand(2)
     ```
+7) For PreferredSize
+    ```dart
+    Text('data').cPreferSize(20)
+    ```
 ***
 [![](https://img.shields.io/badge/From-RΞPADΓΞCH-blue??style=plastic)](https://repadtech.com/)
 [![](https://img.shields.io/badge/@-oms-red??style=plastic)]() [![](https://img.shields.io/badge/@-dc-red??style=plastic)]()
