@@ -146,6 +146,8 @@
     Text('data').cPreferSize(20)
     ```
 ***
+[![pub package](https://img.shields.io/pub/v/flutter_custom_utils.svg?logo=dart&logoColor=00b9fc)](https://pub.dartlang.org/packages/flutter_custom_utils)
+
 [![](https://img.shields.io/badge/From-RΞPADΓΞCH-blue??style=plastic)](https://repadtech.com/)
 [![](https://img.shields.io/badge/@-oms-red??style=plastic)]() [![](https://img.shields.io/badge/@-dc-red??style=plastic)]()
 
