@@ -31,3 +31,5 @@
 * bug fix
 ## 0.1.6
 * bug fix
+## 0.1.7
+* bug fix

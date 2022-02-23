@@ -87,6 +87,56 @@ extension CustomWidgetMargin on Widget {
 }
 
 ///
+/// Allows you to add ClipRRect
+///
+extension CustomWidgetClipRRect on Widget {
+  Widget cClipAll(double radius) => ClipRRect(
+        borderRadius: BorderRadius.circular(radius),
+        child: this,
+      );
+
+  Widget cClipHorizontal({
+    double l = 0.0,
+    double r = 0.0,
+  }) =>
+      ClipRRect(
+        borderRadius: BorderRadius.horizontal(
+          left: Radius.circular(l),
+          right: Radius.circular(r),
+        ),
+        child: this,
+      );
+
+  Widget cClipVertical({
+    double t = 0.0,
+    double b = 0.0,
+  }) =>
+      ClipRRect(
+        borderRadius: BorderRadius.vertical(
+          top: Radius.circular(t),
+          bottom: Radius.circular(b),
+        ),
+        child: this,
+      );
+
+  Widget cClipOnly({
+    double tl = 0.0,
+    double tr = 0.0,
+    double bl = 0.0,
+    double br = 0.0,
+  }) =>
+      ClipRRect(
+        borderRadius: BorderRadius.only(
+          topLeft: Radius.circular(tl),
+          topRight: Radius.circular(tr),
+          bottomLeft: Radius.circular(bl),
+          bottomRight: Radius.circular(br),
+        ),
+        child: this,
+      );
+}
+
+///
 /// Allows you to insert widgets inside a CustomScrollView
 ///
 extension CustomWidgetSliverBox on Widget {

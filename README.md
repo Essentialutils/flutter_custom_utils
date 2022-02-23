@@ -39,7 +39,7 @@
         width: 180,
     ),
     ```
-2) For responsive grid item `aspect ratio`, it should be derived from your static design based on `height` and `width`.
+1) For responsive grid item `aspect ratio`, it should be derived from your static design based on `height` and `width`.
 
     ```dart
     childAspectRatio: getResGridRatio(
@@ -48,7 +48,7 @@
         width: 180,
     ),
     ```
-3) For normal grid `aspect ratio` 
+1) For normal grid `aspect ratio` 
     > Having this aspect ratio will never break in larger or smaller devices
 
     ```dart
@@ -70,86 +70,56 @@
     ```dart
     CHColor.fromHex('#fffff')
     ```
-2) Get hash code from color
+1) Get hash code from color
 
     ```dart
     Color.fromRGBO(250, 250, 250, 0.1).toHex()
     ```
 ---
-[![](https://img.shields.io/badge/for-widgget-green?style=for-the-badge)]()
+[![](https://img.shields.io/badge/for-widget-green?style=for-the-badge)]()
 
-1) All `(padding/margin)`
-
-    ```dart
-    @override
-    Widget build(BuildContext context) {
-        return Container(
-        child: Text('data').cPadAll(10) // cMargAll 
-        );
-    }
-    ```
-2) Only `(padding/margin)`
+1) Allows you to handle `(padding/margin)`
 
     ```dart
-    @override
-    Widget build(BuildContext context) {
-        return Container(
-            child: Text('data').cPadOnly(
-                l: 10,
-                r: 10,
-                t: 10,
-                b: 10,
-            ), // cMargOnly
-        );
-    }
+    Text('data').cPadZero // cMargZero 
+    Text('data').cPadAll(10) // cMargAll
+    Text('data').cPadOnly(l: 10, r: 10, t: 10, b: 10,) // cMargOnly
+    Text('data').cPadSymmetric(h: 10, v: 10,), // cMargSymmetric
     ```
-3) Symmetric `(padding/margin)`
+1) Allows you to handle `ClipRRect`
 
     ```dart
-    @override
-    Widget build(BuildContext context) {
-        return Container(
-            child: Text('data').cPadSymmetric(
-                h: 10,
-                v: 10,
-            ), // cMargSymmetric
-        );
-    }
+    Container().cClipAll(10) 
+    Container().cClipHorizontal(l:10, r:10,) 
+    Container().cClipVertical(t:10, b:10,) 
+    Container().cClipOnly(tl: 10, tr: 10, bl: 10, br: 10,) 
     ```
-4) Zero `(padding/margin)`
-
-    ```dart
-    @override
-    Widget build(BuildContext context) {
-        return Container(
-        child: Text('data').cPadZero, // cMargZero
-        );
-    }
-    ```
-5) Allows you to insert widgets inside a `CustomScrollView`
+1) Allows you to insert widgets inside a `CustomScrollView`
     ```dart
     Text('data').cToSliver
     ```
-6) Allows you to handle `Visibility` and `Opacity`
+1) Allows you to handle `Visibility` and `Opacity`
     ```dart
     Text('data').cVisible(true)
     Text('data').cOpacity(0.3)
     ```
-7) Allows you to handle Alignment
+1) Allows you to handle Alignment
     ```dart
     Text('data').cAlignment(Alignment.topCenter)
     Text('data').cToCenter
     Text('data').cExpand(2)
     ```
-7) For PreferredSize
+1) For PreferredSize
     ```dart
     Text('data').cPreferSize(20)
     ```
 ***
-[![pub package](https://img.shields.io/pub/v/flutter_custom_utils.svg?logo=dart&logoColor=00b9fc)](https://pub.dartlang.org/packages/flutter_custom_utils)
 
 [![](https://img.shields.io/badge/From-RΞPADΓΞCH-blue??style=plastic)](https://repadtech.com/)
-[![](https://img.shields.io/badge/@-oms-red??style=plastic)]() [![](https://img.shields.io/badge/@-dc-red??style=plastic)]()
+[![pub package](https://img.shields.io/pub/v/flutter_custom_utils.svg?logo=dart&logoColor=00b9fc)](https://pub.dartlang.org/packages/flutter_custom_utils)
+
+[![](https://img.shields.io/badge/@-oms-green?style=plastic)]()
+[![](https://img.shields.io/badge/@-dc-green?style=plastic)]()
 
 
 
