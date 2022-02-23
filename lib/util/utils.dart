@@ -2,7 +2,7 @@ import 'dart:developer';
 
 void cLog(
   String body, {
-  String name = 'oms',
+  String n = 'oms',
 }) {
-  log(body, name: name);
+  log('\x1B[32m$body\x1B[0m', name: n);
 }

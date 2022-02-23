@@ -10,8 +10,8 @@ extension CustomNumUtils on num {
   ///
   /// Sample:
   /// ```
-  /// void main() async {
-  ///   await 0.7.seconds.delay(() {
+  /// void main() {
+  ///   0.7.seconds.delay(() {
   /// }
   ///```
   Future cDelay([FutureOr Function()? callback]) async => Future.delayed(
