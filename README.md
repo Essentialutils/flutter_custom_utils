@@ -118,8 +118,5 @@
 [![](https://img.shields.io/badge/From-RΞPADΓΞCH-blue??style=plastic)](https://repadtech.com/)
 [![pub package](https://img.shields.io/pub/v/flutter_custom_utils.svg?logo=dart&logoColor=00b9fc)](https://pub.dartlang.org/packages/flutter_custom_utils)
 
-[![](https://img.shields.io/badge/@-oms-green?style=plastic)]()
-[![](https://img.shields.io/badge/@-dc-green?style=plastic)]()
-
-
+![Alt](https://repobeats.axiom.co/api/embed/2101af02ba767cc668c359f4f1167731c55e3e87.svg "Activity graph")
 
