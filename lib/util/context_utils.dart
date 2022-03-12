@@ -7,6 +7,11 @@ extension ContextExt on BuildContext {
   Size get cSize => MediaQuery.of(this).size;
 
   ///
+  /// The same of [MediaQuery.of(context)]
+  ///
+  MediaQueryData get cMQuery => MediaQuery.of(this);
+
+  ///
   /// The same of [MediaQuery.of(context).size.height]
   ///
 
@@ -57,6 +62,9 @@ extension ContextExt on BuildContext {
   /// similar to [MediaQuery.of(this).devicePixelRatio]
   ///
   double get cDevicePixelRatio => MediaQuery.of(this).devicePixelRatio;
+
+  // Return true if the device is a tablet
+  bool get cIsTablet => MediaQuery.of(this).size.shortestSide > 600;
 }
 
 ///
@@ -64,4 +72,11 @@ extension ContextExt on BuildContext {
 ///
 Size getSize(BuildContext context) {
   return MediaQuery.of(context).size;
+}
+
+///
+/// get MediaQuery size
+///
+MediaQueryData mQuery(BuildContext context) {
+  return MediaQuery.of(context);
 }

@@ -10,9 +10,12 @@ import 'package:flutter_custom_utils/flutter_custom_utils.dart';
 int getResCrosCountGrid({
   required BuildContext context,
   required int width,
+  bool logData = false,
 }) {
   int count = (context.cWidth / width).round();
-  cLog('GridCount => $count');
+  if (logData) {
+    cLog('GridCount => $count');
+  }
   return count;
 }
 
@@ -27,11 +30,14 @@ double getResGridRatio({
   required BuildContext context,
   required int height,
   required int width,
+  bool logData = false,
 }) {
   double w = (context.cWidth / (context.cWidth / width).round());
   double h = (context.cWidth / (context.cWidth / width));
   double asr = w / (h - (width - height));
-  cLog('GridAspectRatio => $asr');
+  if (logData) {
+    cLog('GridAspectRatio => $asr');
+  }
   return asr;
 }
 
@@ -49,10 +55,13 @@ double getGridRatio({
   required int crossAxisCount,
   required int height,
   required int width,
+  bool logData = false,
 }) {
   double w = (context.cWidth / crossAxisCount);
   double h = (context.cWidth / (context.cWidth / width));
   double asr = w / (h - (width - height));
-  cLog('GridAspectRatio => $asr');
+  if (logData) {
+    cLog('GridAspectRatio => $asr');
+  }
   return asr;
 }

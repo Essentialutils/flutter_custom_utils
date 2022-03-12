@@ -1,35 +1,4 @@
-[![](https://img.shields.io/badge/for-duration,_delay-green?style=for-the-badge)]()
-
-1) For duration and delay
-    
-    ```dart
-        void splash() {
-            2.cSeconds.cDelay(() {
-                // code here
-            });
-        }
-    ```
-
-***
-[![](https://img.shields.io/badge/for-MediaQuery-green?style=for-the-badge)]()
-
-1) Get the MediaQuery
-
-    ```dart
-    context.cSize   // getSize(context)
-    context.cWidth 
-    context.cHeight
-    context.cTheme
-    context.cIsDarkMode
-    context.cIconColor
-    context.cTextTheme
-    context.cOrient   // orientation
-    context.cIsLand   // landscape
-    context.cIsPort   // portrait
-    context.cDevicePixelRatio
-    ```
----
-[![](https://img.shields.io/badge/for-GridView-green?style=for-the-badge)]()
+[![for-GridView](https://img.shields.io/badge/for-GridView-green?style=for-the-badge)]()
 > Make a `responsive gridview` by using both `1 and 2` 
 1) Based on your static design's `width`, calculate the responsive `grid item count`.
 
@@ -62,8 +31,57 @@
     ```
 > Your provided `height` and `width` determine how it works
 ---
+[![for-duration, delay](https://img.shields.io/badge/for-duration,_delay-green?style=for-the-badge)]()
 
-[![](https://img.shields.io/badge/for-color-green?style=for-the-badge)]()
+1) For duration and delay
+    
+    ```dart
+        void splash() {
+            2.cSeconds.cDelay(() {
+                // code here
+            });
+        }
+    ```
+
+---
+[![for-MediaQuery](https://img.shields.io/badge/for-MediaQuery-green?style=for-the-badge)]()
+
+1) Get the MediaQuery
+
+    ```dart
+    context.cIsTablet
+    context.cSize    // getSize(context)
+    context.cMQuery  // mQuery(context)
+    context.cWidth 
+    context.cHeight
+    context.cTheme
+    context.cIsDarkMode
+    context.cIconColor
+    context.cTextTheme
+    context.cOrient   // orientation
+    context.cIsLand   // landscape
+    context.cIsPort   // portrait
+    context.cDevicePixelRatio
+    ```
+---
+[![for-String](https://img.shields.io/badge/for-String-green?style=for-the-badge)]()
+
+1) Get the MediaQuery
+
+    ```dart
+    'text'.cToCapitalized()
+    'text'.cToTitleCase()
+    'text'.cIsLowerCase()
+    'text'.cIsAllCap()
+    'text'.cReverse()
+    'text'.cIsDigit()
+    'text'.cIsEmail()
+    'text'.cIsAlphabetOnly()
+    'text'.cIsPhoneIND()
+    ```
+---
+
+[![for-color](https://img.shields.io/badge/for-color-green?style=for-the-badge)]()
 
 1)  Get color from hash code
 
@@ -76,7 +94,7 @@
     Color.fromRGBO(250, 250, 250, 0.1).toHex()
     ```
 ---
-[![](https://img.shields.io/badge/for-widget-green?style=for-the-badge)]()
+[![for-widget](https://img.shields.io/badge/for-widget-green?style=for-the-badge)]()
 
 1) Allows you to handle `(padding/margin)`
 
