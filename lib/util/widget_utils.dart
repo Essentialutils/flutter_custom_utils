@@ -158,6 +158,10 @@ extension CustomWidgetVisibility on Widget {
         opacity: opacity,
         child: this,
       );
+  Widget cAbsorb(bool absorb) => AbsorbPointer(
+        absorbing: absorb,
+        child: this,
+      );
 }
 
 ///
