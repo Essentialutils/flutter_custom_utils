@@ -37,7 +37,13 @@
     
     ```dart
         void splash() {
-            2.cSeconds.cDelay(() {
+            // cDays, cHours, cMinutes, cSeconds, cMilliseconds
+            2.cSeconds.cDelay(() {  
+                // code here
+            });
+
+            // given number in seconds
+            3.cDelay(() {  
                 // code here
             });
         }

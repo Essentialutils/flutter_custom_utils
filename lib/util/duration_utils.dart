@@ -1,6 +1,15 @@
 import 'dart:async';
 
 extension CustonDurationUtils on Duration {
+  /// Utility to delay some callback (or code execution).
+  ///
+  /// Sample:
+  /// ```
+  /// void main() {
+  ///   0.7.seconds.delay(() {
+  /// }
+  ///```
+
   Future cDelay([FutureOr Function()? callback]) async =>
       Future.delayed(this, callback);
 }
@@ -8,10 +17,12 @@ extension CustonDurationUtils on Duration {
 extension CustomNumUtils on num {
   /// Utility to delay some callback (or code execution).
   ///
+  /// wait for provided number of seconds
+  ///
   /// Sample:
   /// ```
   /// void main() {
-  ///   0.7.seconds.delay(() {
+  ///   2.delay(() {
   /// }
   ///```
   Future cDelay([FutureOr Function()? callback]) async => Future.delayed(
