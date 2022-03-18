@@ -131,6 +131,7 @@
 1) Allows you to handle Alignment
     ```dart
     Text('data').cAlignment(Alignment.topCenter)
+    Text('data').cPosition(l: 10, r: 10, t: 10, b: 10,)
     Text('data').cToCenter
     Text('data').cExpand(2)
     ```

@@ -175,6 +175,19 @@ extension CustomWidetPosition on Widget {
         alignment: align,
         child: this,
       );
+  Widget cPosition({
+    double? t,
+    double? b,
+    double? l,
+    double? r,
+  }) =>
+      Positioned(
+        top: t,
+        bottom: b,
+        left: l,
+        right: r,
+        child: this,
+      );
   Widget cExpanded(int flex) => Expanded(
         child: this,
         flex: flex,
