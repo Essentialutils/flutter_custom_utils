@@ -1,3 +1,4 @@
+import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 
 ///
@@ -160,6 +161,25 @@ extension CustomWidgetVisibility on Widget {
       );
   Widget cAbsorb(bool absorb) => AbsorbPointer(
         absorbing: absorb,
+        child: this,
+      );
+
+  ///
+  /// this is used to add shadow in all widget
+  ///
+  Widget cShadow({
+    BoxShape shape = BoxShape.rectangle,
+    Clip clipBehavior = Clip.none,
+    BorderRadius? borderRadius,
+    double elevation = 0.0,
+    Color color = Colors.transparent,
+  }) =>
+      PhysicalModel(
+        shape: shape,
+        clipBehavior: clipBehavior,
+        borderRadius: borderRadius,
+        elevation: elevation,
+        color: color,
         child: this,
       );
 }

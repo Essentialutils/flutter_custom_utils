@@ -122,11 +122,12 @@
     ```dart
     Text('data').cToSliver
     ```
-1) Allows you to handle `Visibility` and `Opacity` and `AbsorbPointer`
+1) Allows you to handle `Visibility`, `Opacity`, `AbsorbPointer` and `PhysicalModel`
     ```dart
     Text('data').cVisible(true)
     Text('data').cOpacity(0.3)
     Text('data').cAbsorb(true)
+    Text('data').cShadow()
     ```
 1) Allows you to handle Alignment
     ```dart
