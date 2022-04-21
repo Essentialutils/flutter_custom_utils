@@ -56,4 +56,19 @@ extension StringCasingExtension on String {
     String str = this;
     return str.length == 10 && str.cIsDigit();
   }
+
+  ///
+  /// build for map to fourl encoded
+  ///
+  /// Content-Type: 'application/x-www-form-urlencoded'
+  ///
+
+  String cFormUrlEncode(Map<String, String> data) {
+    var st = '';
+    data.forEach((key, value) {
+      st += (st != '') ? '&$key=$value' : '$key=$value';
+      return;
+    });
+    return st;
+  }
 }

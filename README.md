@@ -31,6 +31,11 @@
     ```
 > Your provided `height` and `width` determine how it works
 ---
+[![for-GridView](https://img.shields.io/badge/for-application/x_www_form_urlencoded-green?style=for-the-badge)]()
+```dart
+    cFormUrlEncode({'':''});
+```
+---
 [![for-duration, delay](https://img.shields.io/badge/for-duration,_delay-green?style=for-the-badge)]()
 
 1) For duration and delay
