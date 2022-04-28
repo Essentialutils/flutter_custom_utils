@@ -55,6 +55,14 @@
     ```
 
 ---
+[![for-date time](https://img.shields.io/badge/for-Date_time-green?style=for-the-badge)]()
+
+1) add TimeOfDay to DateTime
+    
+    ```dart
+       DateTime.now().cApplied(TimeOfDay.now())
+    ```
+---
 [![for-MediaQuery](https://img.shields.io/badge/for-MediaQuery-green?style=for-the-badge)]()
 
 1) Get the MediaQuery
