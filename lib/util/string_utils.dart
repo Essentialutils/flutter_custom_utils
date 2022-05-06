@@ -2,15 +2,15 @@
 /// A set of extensions for working with strings
 ///
 extension StringCasingExtension on String {
-  String cToCapitalized() =>
+  String get cToCapitalized =>
       length > 0 ? '${this[0].toUpperCase()}${substring(1).toLowerCase()}' : '';
 
-  String cToTitleCase() => replaceAll(RegExp(' +'), ' ')
+  String get cToTitleCase => replaceAll(RegExp(' +'), ' ')
       .split(' ')
-      .map((str) => str.cToCapitalized())
+      .map((str) => str.cToCapitalized)
       .join(' ');
 
-  bool cIsLowerCase() {
+  bool get cIsLowerCase {
     String str = this;
     return str == str.toLowerCase();
   }
@@ -18,11 +18,11 @@ extension StringCasingExtension on String {
   ///
   /// Checks if a string has all capital letters.
   ///
-  bool cIsAllCap() {
+  bool get cIsAllCap {
     return this == (this).toUpperCase();
   }
 
-  String cReverse() {
+  String get cReverse {
     return String.fromCharCodes((this).runes.toList().reversed);
   }
 
@@ -31,7 +31,7 @@ extension StringCasingExtension on String {
   ///
   /// Checks if string is int or double.
   ///
-  bool cIsDigit() {
+  bool get cIsDigit {
     if (cIsNull(this)) {
       return false;
     }
@@ -41,20 +41,39 @@ extension StringCasingExtension on String {
   ///
   /// Checks if string is email.
   ///
-  bool cIsEmail() {
+  bool get cIsEmail {
     var emailRegex =
         r'^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$';
     return RegExp(emailRegex).hasMatch(this);
   }
 
-  bool cIsAlphabetOnly() {
+  bool get cIsAlphabetOnly {
     RegExp reg = RegExp(r'^[a-zA-Z]+$');
     return reg.hasMatch(this);
   }
 
-  bool cIsPhoneIND() {
+  bool get cIsPhoneIND {
     String str = this;
-    return str.length == 10 && str.cIsDigit();
+    return str.length == 10 && str.cIsDigit;
+  }
+
+  ///
+  /// Check if siring is a valid url
+  ///
+  bool get cIsURL {
+    var reg = RegExp(
+        r"^((((H|h)(T|t)|(F|f))(T|t)(P|p)((S|s)?))\://)?(www.|[a-zA-Z0-9].)[a-zA-Z0-9\-\.]+\.[a-zA-Z]{2,6}(\:[0-9]{1,5})*(/($|[a-zA-Z0-9\.\,\;\?\'\\\+&amp;%\$#\=~_\-]+))*$");
+    return reg.hasMatch(this);
+  }
+
+  ///
+  /// Check if siring is a Phone Number
+  ///
+  bool get cIsPhoneNumber {
+    var s = this;
+    var reg = RegExp(r'^[+]*[(]{0,1}[0-9]{1,4}[)]{0,1}[-\s\./0-9]*$');
+    if (s.length > 16 || s.length < 9) return false;
+    return reg.hasMatch(s);
   }
 }
 

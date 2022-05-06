@@ -88,15 +88,17 @@
 1) Get the MediaQuery
 
     ```dart
-    'text'.cToCapitalized()
-    'text'.cToTitleCase()
-    'text'.cIsLowerCase()
-    'text'.cIsAllCap()
-    'text'.cReverse()
-    'text'.cIsDigit()
-    'text'.cIsEmail()
-    'text'.cIsAlphabetOnly()
-    'text'.cIsPhoneIND()
+    'text'.cToCapitalized
+    'text'.cToTitleCase
+    'text'.cIsLowerCase
+    'text'.cIsAllCap
+    'text'.cReverse
+    'text'.cIsDigit
+    'text'.cIsEmail
+    'text'.cIsAlphabetOnly
+    'text'.cIsPhoneIND
+    'text'.cIsURL
+    'text'.cIsPhoneNumber
     ```
 ---
 
