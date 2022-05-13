@@ -99,6 +99,7 @@
     'text'.cIsPhoneIND
     'text'.cIsURL
     'text'.cIsPhoneNumber
+    'true'.cToBoolean  // 0,1 also available
     ```
 ---
 

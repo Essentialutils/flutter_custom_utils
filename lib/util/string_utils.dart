@@ -57,6 +57,17 @@ extension StringCasingExtension on String {
     return str.length == 10 && str.cIsDigit;
   }
 
+  bool get cToBoolean {
+    String str = this;
+    if (str.toLowerCase() == 'true' || str.toLowerCase() == '1') {
+      return true;
+    }
+    if (str.toLowerCase() == 'false' || str.toLowerCase() == '0') {
+      return false;
+    }
+    throw ('value : str');
+  }
+
   ///
   /// Check if siring is a valid url
   ///
