@@ -65,7 +65,7 @@ extension StringCasingExtension on String {
     if (str.toLowerCase() == 'false' || str.toLowerCase() == '0') {
       return false;
     }
-    throw ('value : str');
+    throw ('value : $str');
   }
 
   ///
