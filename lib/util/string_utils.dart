@@ -11,8 +11,7 @@ extension StringCasingExtension on String {
       .join(' ');
 
   bool get cIsLowerCase {
-    String str = this;
-    return str == str.toLowerCase();
+    return this == (this).toLowerCase();
   }
 
   ///
@@ -53,19 +52,17 @@ extension StringCasingExtension on String {
   }
 
   bool get cIsPhoneIND {
-    String str = this;
-    return str.length == 10 && str.cIsDigit;
+    return (this).length == 10 && (this).cIsDigit;
   }
 
   bool get cToBoolean {
-    String str = this;
-    if (str.toLowerCase() == 'true' || str.toLowerCase() == '1') {
+    if ((this).toLowerCase() == 'true' || (this).toLowerCase() == '1') {
       return true;
     }
-    if (str.toLowerCase() == 'false' || str.toLowerCase() == '0') {
+    if ((this).toLowerCase() == 'false' || (this).toLowerCase() == '0') {
       return false;
     }
-    throw ('value : $str');
+    throw ('value : $this');
   }
 
   ///
@@ -81,10 +78,9 @@ extension StringCasingExtension on String {
   /// Check if siring is a Phone Number
   ///
   bool get cIsPhoneNumber {
-    var s = this;
     var reg = RegExp(r'^[+]*[(]{0,1}[0-9]{1,4}[)]{0,1}[-\s\./0-9]*$');
-    if (s.length > 16 || s.length < 9) return false;
-    return reg.hasMatch(s);
+    if ((this).length > 16 || (this).length < 9) return false;
+    return reg.hasMatch(this);
   }
 }
 
