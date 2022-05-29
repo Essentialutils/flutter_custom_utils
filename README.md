@@ -105,13 +105,13 @@
 ---
 [![for-list](https://img.shields.io/badge/for-List-green?style=for-the-badge)]()
 
-1) Get the MediaQuery
+1) Get Random item from list
 
     ```dart
     ['aa', 'bb', 'cc', 'dd'].cRandomSelect.toString()
     ```
+---
 [![for-color](https://img.shields.io/badge/for-color-green?style=for-the-badge)]()
-
 1)  Get color from hash code
 
     ```dart
