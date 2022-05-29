@@ -1,3 +1,5 @@
+import 'package:intl/intl.dart';
+
 ///
 /// A set of extensions for working with strings
 ///
@@ -81,6 +83,17 @@ extension StringCasingExtension on String {
     var reg = RegExp(r'^[+]*[(]{0,1}[0-9]{1,4}[)]{0,1}[-\s\./0-9]*$');
     if ((this).length > 16 || (this).length < 9) return false;
     return reg.hasMatch(this);
+  }
+
+  ///
+  /// Numbers will be converted to Indian currency
+  ///
+  String get cToCurrencyIND {
+    return NumberFormat.currency(
+      symbol: '₹ ',
+      locale: 'HI',
+      decimalDigits: 2,
+    ).format(int.parse(this));
   }
 }
 

@@ -100,6 +100,7 @@
     'text'.cIsURL
     'text'.cIsPhoneNumber
     'true'.cToBoolean  // 0,1 also available
+    '1000'.cToCurrencyIND
     ```
 ---
 [![for-list](https://img.shields.io/badge/for-List-green?style=for-the-badge)]()
