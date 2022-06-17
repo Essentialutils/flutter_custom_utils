@@ -1,3 +1,18 @@
+[![utilities](https://img.shields.io/badge/=>-utilities-green?style=for-the-badge)]()
+
+1) Widget to png
+
+    ```dart
+        cTakePicture(GlobalKey);
+
+    // wrap with RepaintBoundary then use kry to createimage
+
+        RepaintBoundary(
+            key: GlobalKey,
+            child:Text('data'),
+        )
+    ```
+---
 [![for-GridView](https://img.shields.io/badge/for-GridView-green?style=for-the-badge)]()
 > Make a `responsive gridview` by using both `1 and 2` 
 1) Based on your static design's `width`, calculate the responsive `grid item count`.
