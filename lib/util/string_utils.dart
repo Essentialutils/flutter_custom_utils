@@ -93,7 +93,7 @@ extension StringCasingExtension on String {
       symbol: '₹ ',
       locale: 'HI',
       decimalDigits: 2,
-    ).format(int.parse(this));
+    ).format(double.parse(this));
   }
 }
 
