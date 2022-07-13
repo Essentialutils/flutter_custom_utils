@@ -7,3 +7,5 @@ export 'package:flutter_custom_utils/util/context_utils.dart';
 export 'package:flutter_custom_utils/util/duration_utils.dart';
 export 'package:flutter_custom_utils/util/date_time_utils.dart';
 export 'package:flutter_custom_utils/util/list_utils.dart';
+export 'package:flutter_custom_utils/util/url/url_strategy_non_web.dart'
+    if (dart.library.html) 'package:flutter_custom_utils/util/url/url_strategy_web.dart';

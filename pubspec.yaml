@@ -1,6 +1,6 @@
 name: flutter_custom_utils
 description: It is designed to simplify code and support utilities for personal and commercial use
-version: 0.3.3
+version: 0.3.4
 homepage: https://github.com/Essentialutils/flutter_custom_utils
 
 environment:
@@ -8,9 +8,12 @@ environment:
   # flutter: ">=1.17.0"
 
 dependencies:
+  flutter_web_plugins:
+    sdk: flutter 
   flutter:
     sdk: flutter
   intl: ^0.17.0
+  
 
 dev_dependencies:
   flutter_test:

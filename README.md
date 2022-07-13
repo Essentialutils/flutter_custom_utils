@@ -12,6 +12,16 @@
             child:Text('data'),
         )
     ```
+1) flutter url structure
+    > https://domain.com/splash remove hash from url
+    ```dart
+    void main(){
+        // Here we set the URL strategy for our web app.
+        cSetPathUrl();
+
+        runApp(MyApp());
+    }
+    ```
 ---
 [![for-GridView](https://img.shields.io/badge/for-GridView-green?style=for-the-badge)]()
 > Make a `responsive gridview` by using both `1 and 2` 
