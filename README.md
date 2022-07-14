@@ -110,7 +110,7 @@
 ---
 [![for-String](https://img.shields.io/badge/for-String-green?style=for-the-badge)]()
 
-1) Get the MediaQuery
+1) String utils
 
     ```dart
     'text'.cToCapitalized
@@ -170,12 +170,13 @@
     ```dart
     Text('data').cToSliver
     ```
-1) Allows you to handle `Visibility`, `Opacity`, `AbsorbPointer` and `PhysicalModel`
+1) More widgets
     ```dart
     Text('data').cVisible(true)
     Text('data').cOpacity(0.3)
     Text('data').cAbsorb(true)
     Text('data').cShadow()
+    Text('data').cHero(tag)
     ```
 1) Allows you to handle Alignment
     ```dart

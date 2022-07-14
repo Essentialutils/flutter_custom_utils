@@ -213,12 +213,16 @@ extension CustomWidetPosition on Widget {
       );
 }
 
-///
-/// PreferredSize
-///
-extension CustomWidetPreferSize on Widget {
+extension CustomWidet on Widget {
+  ///
+  /// PreferredSize
+  ///
   PreferredSizeWidget cPreferSize(double h) => PreferredSize(
         child: this,
         preferredSize: Size.fromHeight(h),
+      );
+  Widget cHero(Object tag) => Hero(
+        child: this,
+        tag: tag,
       );
 }
