@@ -15,12 +15,13 @@
 1) flutter platform
     > just call these functions anywhere
     ```dart
-    isAndroid()
-    isIOS()
-    isLinux()
-    isWindows()
-    isMacOS()
-    isWeb()
+    cIsAndroid()
+    cIsIOS()
+    cIsLinux()
+    cIsWindows()
+    cIsMacOS()
+    cIsWeb()
+    cIsFuchsia()
     ```
 1) flutter url structure
     > https://repad.dev/splash remove hash from url (https://repad.dev/#/splash)

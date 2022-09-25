@@ -1,28 +1,30 @@
 import 'dart:io';
 import 'package:flutter/foundation.dart';
 
-extension Target on Object {
-  bool isAndroid() {
-    return Platform.isAndroid;
-  }
+bool cIsAndroid() {
+  return Platform.isAndroid;
+}
 
-  bool isIOS() {
-    return Platform.isIOS;
-  }
+bool cIsIOS() {
+  return Platform.isIOS;
+}
 
-  bool isLinux() {
-    return Platform.isLinux;
-  }
+bool cIsLinux() {
+  return Platform.isLinux;
+}
 
-  bool isWindows() {
-    return Platform.isWindows;
-  }
+bool cIsWindows() {
+  return Platform.isWindows;
+}
 
-  bool isMacOS() {
-    return Platform.isMacOS;
-  }
+bool cIsMacOS() {
+  return Platform.isMacOS;
+}
 
-  bool isWeb() {
-    return kIsWeb;
-  }
+bool cIsFuchsia() {
+  return Platform.isFuchsia;
+}
+
+bool cIsWeb() {
+  return kIsWeb;
 }
