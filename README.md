@@ -12,8 +12,18 @@
             child:Text('data'),
         )
     ```
+1) flutter platform
+    > just call these functions anywhere
+    ```dart
+    isAndroid()
+    isIOS()
+    isLinux()
+    isWindows()
+    isMacOS()
+    isWeb()
+    ```
 1) flutter url structure
-    > https://domain.com/splash remove hash from url
+    > https://repad.dev/splash remove hash from url (https://repad.dev/#/splash)
     ```dart
     void main(){
         // Here we set the URL strategy for our web app.

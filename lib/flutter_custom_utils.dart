@@ -1,4 +1,5 @@
 export 'package:flutter_custom_utils/util/string_utils.dart';
+export 'package:flutter_custom_utils/util/platform.dart';
 export 'package:flutter_custom_utils/util/utils.dart';
 export 'package:flutter_custom_utils/util/color_utils.dart';
 export 'package:flutter_custom_utils/util/grid_utils.dart';
