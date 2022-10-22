@@ -10,7 +10,7 @@
 
    ```dart
     cTakePicture(GlobalKey);
-    // wrap with RepaintBoundary then use kry to createimage
+    // wrap with RepaintBoundary then use kry to create image
     RepaintBoundary(
         key: GlobalKey,
         child:Text('data'),
@@ -49,7 +49,7 @@
 1.  Based on your static design's `width`, calculate the responsive `grid item count`.
 
     ```dart
-    crossAxisCount: getResCrosCountGrid(
+    crossAxisCount: getResCrossCountGrid(
         context: context,
         width: 180,
     ),
@@ -140,9 +140,9 @@
 
 ---
 
-[![for-String](https://img.shields.io/badge/for-String-green?style=for-the-badge)]()
+[![more-Utils](https://img.shields.io/badge/more-Utils-green?style=for-the-badge)]()
 
-1. String utils
+1. utils
 
    ```dart
    'text'.cToCapitalized
@@ -158,6 +158,10 @@
    'text'.cIsPhoneNumber
    'true'.cToBoolean  // 0,1 also available
    '1000'.cToCurrencyIND
+    1500.1.cToDistance  // (00 km, 00 m available)
+   ```
+   ```dart
+    String offer = cGetOffer(offerPrice: 90,ordinalPrice: 100); // 10 %
    ```
 
 ---

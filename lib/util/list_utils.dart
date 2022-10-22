@@ -1,6 +1,6 @@
 import 'dart:math';
 
-extension ListExtention on List {
+extension ListExtension on List {
   ///
   /// select random item from list
   ///

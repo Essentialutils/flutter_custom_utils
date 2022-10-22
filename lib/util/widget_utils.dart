@@ -186,7 +186,7 @@ extension CustomWidgetVisibility on Widget {
 ///
 /// Allows you to handle alignment
 ///
-extension CustomWidetPosition on Widget {
+extension CustomWidgetPosition on Widget {
   Widget get cToCenter => Center(
         child: this,
       );
@@ -213,7 +213,7 @@ extension CustomWidetPosition on Widget {
       );
 }
 
-extension CustomWidet on Widget {
+extension CustomWidget on Widget {
   ///
   /// PreferredSize
   ///

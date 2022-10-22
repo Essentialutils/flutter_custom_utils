@@ -99,7 +99,7 @@ extension StringCasingExtension on String {
 }
 
 ///
-/// build for map to fourl encoded
+/// build for map to form encoded
 ///
 /// Content-Type: 'application/x-www-form-urlencoded'
 ///

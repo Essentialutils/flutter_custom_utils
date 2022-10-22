@@ -7,7 +7,7 @@ import 'package:flutter_custom_utils/flutter_custom_utils.dart';
 ///  [width] is your grid item width
 ///
 ///
-int getResCrosCountGrid({
+int getResCrossCountGrid({
   required BuildContext context,
   required int width,
   bool logData = false,

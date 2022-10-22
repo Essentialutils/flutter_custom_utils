@@ -6,7 +6,7 @@ import 'dart:ui' as ui;
 import 'package:platform_device_id/platform_device_id.dart';
 
 ///
-/// log datas in green color in vs code only
+/// log data in green color in vs code only
 ///
 void cLog(
   String body, {

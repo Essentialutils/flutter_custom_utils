@@ -1,6 +1,6 @@
 import 'dart:async';
 
-extension CustonDurationUtils on Duration {
+extension CustomDurationUtils on Duration {
   /// Utility to delay some callback (or code execution).
   ///
   /// Sample:
