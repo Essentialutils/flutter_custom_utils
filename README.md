@@ -1,9 +1,9 @@
 [![utilities](https://img.shields.io/badge/=>-utilities-green?style=for-the-badge)]()
 
-1. get device id ia all platform
+1. get device id in all available devices platform (android, ios, windows, linux, mac, web(get info details))
 
    ```dart
-    getDeviceId
+    await getDeviceId()
    ```
 
 1. Widget to png
@@ -44,7 +44,7 @@
 
 [![for-GridView](https://img.shields.io/badge/for-GridView-green?style=for-the-badge)]()
 
-> Make a `responsive gridview` by using both `1 and 2`
+> Make a `responsive gridView` by using both `1 and 2`
 
 1.  Based on your static design's `width`, calculate the responsive `grid item count`.
 
@@ -160,6 +160,7 @@
    '1000'.cToCurrencyIND
     1500.1.cToDistance  // (00 km, 00 m available)
    ```
+
    ```dart
     String offer = cGetOffer(offerPrice: 90,ordinalPrice: 100); // 10 %
    ```

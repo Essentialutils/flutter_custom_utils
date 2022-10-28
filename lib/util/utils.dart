@@ -1,9 +1,11 @@
 import 'dart:developer';
 import 'dart:typed_data';
+import 'package:device_info_plus/device_info_plus.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'dart:ui' as ui;
-import 'package:platform_device_id/platform_device_id.dart';
+
+import 'package:flutter_custom_utils/flutter_custom_utils.dart';
 
 ///
 /// log data in green color in vs code only
@@ -18,7 +20,31 @@ void cLog(
 ///
 /// get device id in all platform
 ///
-Future<String?> get getDeviceId async => await PlatformDeviceId.getDeviceId;
+
+Future<String> getDeviceId() async {
+  var deviceInfo = DeviceInfoPlugin();
+  if (cIsIOS) {
+    var iosDeviceInfo = await deviceInfo.iosInfo;
+    return iosDeviceInfo.identifierForVendor ?? 'ios Error';
+  } else if (cIsAndroid) {
+    var androidDeviceInfo = await deviceInfo.androidInfo;
+    return androidDeviceInfo.id;
+  } else if (cIsWindows) {
+    var windowsDeviceInfo = await deviceInfo.windowsInfo;
+    return windowsDeviceInfo.deviceId;
+  } else if (cIsLinux) {
+    var linuxDeviceInfo = await deviceInfo.linuxInfo;
+    return linuxDeviceInfo.id;
+  } else if (cIsWeb) {
+    var webDeviceInfo = await deviceInfo.webBrowserInfo;
+    return webDeviceInfo.data.toString();
+  } else if (cIsMacOS) {
+    var macDeviceInfo = await deviceInfo.macOsInfo;
+    return macDeviceInfo.systemGUID ?? 'mac os error';
+  } else {
+    return 'not Available';
+  }
+}
 
 Future<Uint8List> cTakePicture(GlobalKey<State<StatefulWidget>> key) async {
   RenderRepaintBoundary boundary =
