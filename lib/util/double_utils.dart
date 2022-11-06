@@ -4,9 +4,15 @@ extension DoubleExtension on double {
   ///
   /// then result will get m or km with extension
   ///
-  String get cToDistance => (this >= 1000)
-      ? '${(this / 1000).toStringAsFixed(2)} km'
-      : '${(this).toStringAsFixed(2)} m';
+  String get cToDistance {
+    var response = '';
+    if (this >= 1000) {
+      response = '${(this / 1000).toStringAsFixed(2)} km';
+    } else {
+      response = '${(this).toStringAsFixed(2)} m';
+    }
+    return response.replaceAll('.00', '');
+  }
 }
 
 ///
@@ -15,9 +21,13 @@ extension DoubleExtension on double {
 String cGetOffer({
   required double offerPrice,
   required double ordinalPrice,
+  round = false,
+  suffix = ' %',
+  prefix = '',
 }) {
   var data = ((ordinalPrice - offerPrice) / ordinalPrice) * 100;
-  return (data.toString().contains('.'))
-      ? '${(data).toStringAsFixed(2)} %'
-      : '$data %';
+  if (round) {
+    return '$prefix${(data).round()}$suffix';
+  }
+  return '$prefix${(data).toStringAsFixed(2).replaceAll('.00', '')}$suffix';
 }

@@ -1,7 +1,7 @@
 name: flutter_custom_utils
 description: It is designed to simplify code and support utilities for personal
   and commercial use
-version: 0.4.0
+version: 0.4.1
 homepage: https://github.com/Essentialutils/flutter_custom_utils
 
 environment:
@@ -9,12 +9,12 @@ environment:
   # flutter: ">=1.17.0"
 
 dependencies:
+  device_info_plus: ^8.0.0
   flutter:
     sdk: flutter
   flutter_web_plugins:
     sdk: flutter
   intl: ^0.17.0
-  device_info_plus: ^8.0.0
 
 dev_dependencies:
   flutter_lints: ^1.0.0

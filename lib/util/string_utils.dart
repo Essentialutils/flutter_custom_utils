@@ -64,7 +64,7 @@ extension StringCasingExtension on String {
     if ((this).toLowerCase() == 'false' || (this).toLowerCase() == '0') {
       return false;
     }
-    throw ('value : $this');
+    throw ('cToBoolean value is : $this');
   }
 
   ///
@@ -94,7 +94,7 @@ extension StringCasingExtension on String {
       symbol: '₹ ',
       locale: 'HI',
       decimalDigits: 2,
-    ).format(double.parse(this));
+    ).format(double.parse(this)).replaceAll('.00', '');
   }
 }
 
