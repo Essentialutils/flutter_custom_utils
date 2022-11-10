@@ -157,12 +157,21 @@
    'text'.cIsURL
    'text'.cIsPhoneNumber
    'true'.cToBoolean  // 0,1 also available
-   '1000'.cToCurrencyIND
+   '1000'.cToCurrencyIND // ₹ 1,000.00
+   '1000'.cToCurrency() // ₹ 1,000
     1500.1.cToDistance  // (00 km, 00 m available)
    ```
-
+1. cGetOffer()
    ```dart
     String offer = cGetOffer(offerPrice: 90,ordinalPrice: 100); // 10 %
+   ```
+1. buildString()
+   ```dart
+    final word = buildString((sb) {
+        for (var i = 0; i < 10; i++) {
+            sb.write(i);
+        }
+    });  // 0123456789
    ```
 
 ---

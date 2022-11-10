@@ -94,7 +94,32 @@ extension StringCasingExtension on String {
       symbol: '₹ ',
       locale: 'HI',
       decimalDigits: 2,
-    ).format(double.parse(this)).replaceAll('.00', '');
+    ).format(double.parse(this));
+  }
+
+  ///
+  /// Numbers will be converted to currency all customization available
+  ///
+  String cToCurrency({
+    removePointValueIfEmpty = true,
+    symbol = '₹ ',
+    currencyFormat = 'HI',
+    decimalDigits = 2,
+  }) {
+    var emptyPoint = '.' +
+        buildString(
+          (sb) {
+            for (var i = 0; i < decimalDigits; i++) {
+              sb.write('0');
+            }
+          },
+        );
+    var value = NumberFormat.currency(
+      symbol: symbol,
+      locale: currencyFormat,
+      decimalDigits: decimalDigits,
+    ).format(double.parse(this));
+    return (removePointValueIfEmpty) ? value.replaceAll(emptyPoint, '') : value;
   }
 }
 
@@ -111,4 +136,14 @@ String cFormUrlEncode(Map<String, String> data) {
     return;
   });
   return st;
+}
+
+///
+/// Builds new string by populating newly created [StringBuffer] using provided [builderAction]
+/// and then converting it to [String].
+///
+String buildString(void Function(StringBuffer sb) builderAction) {
+  final buffer = StringBuffer();
+  builderAction(buffer);
+  return buffer.toString();
 }
