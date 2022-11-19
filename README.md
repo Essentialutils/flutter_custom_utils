@@ -161,6 +161,7 @@
    '1000'.cToCurrency() // ₹ 1,000
     1500.1.cToDistance  // (00 km, 00 m available)
    ```
+
 1. cGetOffer()
    ```dart
     String offer = cGetOffer(offerPrice: 90,ordinalPrice: 100); // 10 %
@@ -233,6 +234,7 @@
    Text('data').cAbsorb(true)
    Text('data').cShadow()
    Text('data').cHero(tag)
+   Text('data').cSizedBox(h:10,w:10)
    ```
 1. Allows you to handle Alignment
    ```dart

@@ -158,6 +158,10 @@ extension CustomWidgetVisibility on Widget {
         opacity: opacity,
         child: this,
       );
+
+  ///
+  /// click disable
+  ///
   Widget cAbsorb(bool absorb) => AbsorbPointer(
         absorbing: absorb,
         child: this,
@@ -221,6 +225,19 @@ extension CustomWidget on Widget {
         child: this,
         preferredSize: Size.fromHeight(h),
       );
+
+  ///
+  /// SizedBox
+  ///
+  Widget cSizedBox(double? h, double? w) => SizedBox(
+        child: this,
+        height: h,
+        width: w,
+      );
+
+  ///
+  /// hero animation widget
+  ///
   Widget cHero(Object tag) => Hero(
         child: this,
         tag: tag,
