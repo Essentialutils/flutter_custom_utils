@@ -67,15 +67,15 @@
 
 1.  For normal grid `aspect ratio` > Having this aspect ratio will never break in larger or smaller devices
 
-        ```dart
+    ```dart
+    crossAxisCount: 2,
+    childAspectRatio: getGridRatio(
         crossAxisCount: 2,
-        childAspectRatio: getGridRatio(
-            crossAxisCount: 2,
-            context: context,
-            height: 165,
-            width: 180,
-        ),
-        ```
+        context: context,
+        height: 165,
+        width: 180,
+    ),
+    ```
 
     > Your provided `height` and `width` determine how it works
 
@@ -159,7 +159,8 @@
    'true'.cToBoolean  // 0,1 also available
    '1000'.cToCurrencyIND // ₹ 1,000.00
    '1000'.cToCurrency() // ₹ 1,000
-    1500.1.cToDistance  // (00 km, 00 m available)
+    000.0.cToDistance  // (00 km, 00 m available)
+    000.0.cToWeight  // (00 g, 00 kg available)
    ```
 
 1. cGetOffer()
@@ -250,7 +251,15 @@
 
 ---
 
-[![](https://img.shields.io/badge/From-RΞPADΓΞCH-blue??style=plastic)](https://repadtech.com/)
-[![pub package](https://img.shields.io/pub/v/flutter_custom_utils.svg?logo=dart&logoColor=00b9fc)](https://pub.dartlang.org/packages/flutter_custom_utils)
+[![](https://img.shields.io/pub/publisher/flutter_custom_utils?label=From)](https://repadtech.com/)
+[![](https://img.shields.io/github/license/Essentialutils/flutter_custom_utils)](https://github.com/Essentialutils/flutter_custom_utils/blob/main/LICENSE)
+
+[![pub package](https://img.shields.io/pub/v/flutter_custom_utils.svg?logo=dart&logoColor=00b9fc)](https://pub.dev/packages/flutter_custom_utils)
+[![](https://img.shields.io/pub/points/flutter_custom_utils?logo=dart&logoColor=00b9fc)](https://pub.dev/packages/flutter_custom_utils)
+[![](https://img.shields.io/pub/popularity/flutter_custom_utils?logo=dart&logoColor=00b9fc)](https://pub.dev/packages/flutter_custom_utils)
+[![](https://img.shields.io/pub/likes/flutter_custom_utils?logo=dart&logoColor=00b9fc)](https://pub.dev/packages/flutter_custom_utils)
+
+[![](https://badgen.net/pub/flutter-platform/flutter_custom_utils)](https://pub.dev/packages/flutter_custom_utils)
+
 
 ![Alt](https://repobeats.axiom.co/api/embed/2101af02ba767cc668c359f4f1167731c55e3e87.svg "Activity graph")

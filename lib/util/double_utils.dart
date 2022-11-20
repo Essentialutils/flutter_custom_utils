@@ -13,6 +13,21 @@ extension DoubleExtension on double {
     }
     return response.replaceAll('.00', '');
   }
+
+  ///
+  /// provide data in grams
+  ///
+  /// then result will get g or kg with extension
+  ///
+  String get cToWeight {
+    var response = '';
+    if (this >= 1000) {
+      response = '${(this / 1000)} kg';
+    } else {
+      response = '${(this)} g';
+    }
+    return response;
+  }
 }
 
 ///
