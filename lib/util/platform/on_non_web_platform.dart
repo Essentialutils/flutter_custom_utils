@@ -1,5 +1,5 @@
-import 'dart:io';
 import 'package:flutter/foundation.dart';
+import 'dart:io';
 
 bool get cIsAndroid => (kIsWeb ? false : Platform.isAndroid);
 bool get cIsIOS => (kIsWeb ? false : Platform.isIOS);
