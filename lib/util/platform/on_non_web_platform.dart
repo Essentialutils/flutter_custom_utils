@@ -1,10 +1,13 @@
 import 'package:flutter/foundation.dart';
 import 'dart:io';
 
-bool get cIsAndroid => (kIsWeb ? false : Platform.isAndroid);
-bool get cIsIOS => (kIsWeb ? false : Platform.isIOS);
-bool get cIsLinux => (kIsWeb ? false : Platform.isLinux);
-bool get cIsWindows => (kIsWeb ? false : Platform.isWindows);
-bool get cIsMacOS => (kIsWeb ? false : Platform.isMacOS);
-bool get cIsFuchsia => (kIsWeb ? false : Platform.isFuchsia);
+///
+/// run code on non web platform and also het current platform status
+///
+bool get cIsAndroid => Platform.isAndroid;
+bool get cIsIOS => Platform.isIOS;
+bool get cIsLinux => Platform.isLinux;
+bool get cIsWindows => Platform.isWindows;
+bool get cIsMacOS => Platform.isMacOS;
+bool get cIsFuchsia => Platform.isFuchsia;
 bool get cIsWeb => kIsWeb;

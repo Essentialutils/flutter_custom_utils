@@ -37,7 +37,7 @@ Future<String> getDeviceId() async {
     return linuxDeviceInfo.id;
   } else if (cIsWeb) {
     var webDeviceInfo = await deviceInfo.webBrowserInfo;
-    return webDeviceInfo.data.toString();
+    return "${webDeviceInfo.vendor ?? ' <=> '} : ${webDeviceInfo.userAgent ?? ' <=> '} : ${webDeviceInfo.hardwareConcurrency ?? ' <=> '}";
   } else if (cIsMacOS) {
     var macDeviceInfo = await deviceInfo.macOsInfo;
     return macDeviceInfo.systemGUID ?? 'mac os error';
