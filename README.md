@@ -1,3 +1,16 @@
+
+---
+
+[![](https://img.shields.io/pub/publisher/flutter_custom_utils?label=From)](https://repadtech.com/)
+[![](https://img.shields.io/github/license/Essentialutils/flutter_custom_utils)](https://github.com/Essentialutils/flutter_custom_utils/blob/main/LICENSE)
+[![pub package](https://img.shields.io/pub/v/flutter_custom_utils.svg?logo=dart&logoColor=00b9fc)](https://pub.dev/packages/flutter_custom_utils)
+[![](https://img.shields.io/pub/points/flutter_custom_utils?logo=dart&logoColor=00b9fc)](https://pub.dev/packages/flutter_custom_utils)
+[![](https://img.shields.io/pub/popularity/flutter_custom_utils?logo=dart&logoColor=00b9fc)](https://pub.dev/packages/flutter_custom_utils)
+[![](https://img.shields.io/pub/likes/flutter_custom_utils?logo=dart&logoColor=00b9fc)](https://pub.dev/packages/flutter_custom_utils)
+[![](https://badgen.net/pub/flutter-platform/flutter_custom_utils)](https://pub.dev/packages/flutter_custom_utils)
+
+---
+
 [![utilities](https://img.shields.io/badge/=>-utilities-green?style=for-the-badge)]()
 
 1. get device id in all available devices platform (android, ios, windows, linux, mac, web(get info details))
@@ -185,6 +198,11 @@
    ```dart
    ['aa', 'bb', 'cc', 'dd'].cRandomSelect.toString()
    ```
+1. Get first item from list (if list is empty then result will be null)
+    ```dart
+    ['aa', 'bb', 'cc', 'dd'].cFirst
+    ['aa', 'bb', 'cc', 'dd'].cFirstWhere((e)=>(type your condition here)))
+    ```
 
 ---
 
@@ -250,16 +268,4 @@
    ```
 
 ---
-
-[![](https://img.shields.io/pub/publisher/flutter_custom_utils?label=From)](https://repadtech.com/)
-[![](https://img.shields.io/github/license/Essentialutils/flutter_custom_utils)](https://github.com/Essentialutils/flutter_custom_utils/blob/main/LICENSE)
-
-[![pub package](https://img.shields.io/pub/v/flutter_custom_utils.svg?logo=dart&logoColor=00b9fc)](https://pub.dev/packages/flutter_custom_utils)
-[![](https://img.shields.io/pub/points/flutter_custom_utils?logo=dart&logoColor=00b9fc)](https://pub.dev/packages/flutter_custom_utils)
-[![](https://img.shields.io/pub/popularity/flutter_custom_utils?logo=dart&logoColor=00b9fc)](https://pub.dev/packages/flutter_custom_utils)
-[![](https://img.shields.io/pub/likes/flutter_custom_utils?logo=dart&logoColor=00b9fc)](https://pub.dev/packages/flutter_custom_utils)
-
-[![](https://badgen.net/pub/flutter-platform/flutter_custom_utils)](https://pub.dev/packages/flutter_custom_utils)
-
-
 ![Alt](https://repobeats.axiom.co/api/embed/2101af02ba767cc668c359f4f1167731c55e3e87.svg "Activity graph")
