@@ -7,7 +7,7 @@ import 'package:flutter_custom_utils/flutter_custom_utils.dart';
 ///  [width] is your grid item width
 ///
 ///
-int getResCrossCountGrid({
+int cGetResCrossCountGrid({
   required BuildContext context,
   required int width,
   bool logData = false,
@@ -25,8 +25,7 @@ int getResCrossCountGrid({
 /// provide [height],[width] of your child design
 ///
 ///
-
-double getResGridRatio({
+double cGetResGridRatio({
   required BuildContext context,
   required int height,
   required int width,
@@ -49,8 +48,7 @@ double getResGridRatio({
 /// and [crossAxisCount] also
 ///
 ///
-
-double getGridRatio({
+double cGetGridRatio({
   required BuildContext context,
   required int crossAxisCount,
   required int height,

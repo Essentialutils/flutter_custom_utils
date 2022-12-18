@@ -16,7 +16,7 @@
 1. get device id in all available devices platform (android, ios, windows, linux, mac, web(get info details))
 
    ```dart
-    await getDeviceId()
+    await cGetDeviceId()
    ```
 
 1. Widget to png
@@ -62,7 +62,7 @@
 1.  Based on your static design's `width`, calculate the responsive `grid item count`.
 
     ```dart
-    crossAxisCount: getResCrossCountGrid(
+    crossAxisCount: cGetResCrossCountGrid(
         context: context,
         width: 180,
     ),
@@ -71,7 +71,7 @@
 1.  For responsive grid item `aspect ratio`, it should be derived from your static design based on `height` and `width`.
 
     ```dart
-    childAspectRatio: getResGridRatio(
+    childAspectRatio: cGetResGridRatio(
         context: context,
         height: 165,
         width: 180,
@@ -82,7 +82,7 @@
 
     ```dart
     crossAxisCount: 2,
-    childAspectRatio: getGridRatio(
+    childAspectRatio: cGetGridRatio(
         crossAxisCount: 2,
         context: context,
         height: 165,
@@ -182,7 +182,7 @@
    ```
 1. buildString()
    ```dart
-    final word = buildString((sb) {
+    final word = cBuildString((sb) {
         for (var i = 0; i < 10; i++) {
             sb.write(i);
         }

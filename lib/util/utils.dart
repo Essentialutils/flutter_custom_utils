@@ -20,8 +20,7 @@ void cLog(
 ///
 /// get device id in all platform
 ///
-
-Future<String> getDeviceId() async {
+Future<String> cGetDeviceId() async {
   var deviceInfo = DeviceInfoPlugin();
   if (cIsIOS) {
     var iosDeviceInfo = await deviceInfo.iosInfo;

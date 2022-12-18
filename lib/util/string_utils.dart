@@ -107,7 +107,7 @@ extension StringCasingExtension on String {
     decimalDigits = 2,
   }) {
     var emptyPoint = '.' +
-        buildString(
+        cBuildString(
           (sb) {
             for (var i = 0; i < decimalDigits; i++) {
               sb.write('0');
@@ -142,7 +142,7 @@ String cFormUrlEncode(Map<String, String> data) {
 /// Builds new string by populating newly created [StringBuffer] using provided [builderAction]
 /// and then converting it to [String].
 ///
-String buildString(void Function(StringBuffer sb) builderAction) {
+String cBuildString(void Function(StringBuffer sb) builderAction) {
   final buffer = StringBuffer();
   builderAction(buffer);
   return buffer.toString();
