@@ -13,3 +13,4 @@ export 'package:flutter_custom_utils/util/platform/on_web_platform.dart'
     if (dart.library.io) 'package:flutter_custom_utils/util/platform/on_non_web_platform.dart';
 export 'package:flutter_custom_utils/util/double_utils.dart';
 export 'package:flutter_custom_utils/util/deprecated_utils.dart';
+export 'package:flutter_custom_utils/util/file_pick_and_crop.dart';

@@ -1,4 +1,3 @@
-
 ---
 
 [![](https://img.shields.io/pub/publisher/flutter_custom_utils?label=From)](https://repadtech.com/)
@@ -13,6 +12,30 @@
 
 [![utilities](https://img.shields.io/badge/=>-utilities-green?style=for-the-badge)]()
 
+1. Pick file and crop without loosing quality
+
+    ```dart
+    cPickAndCropImage(
+        context,
+        cropDisable: false,
+        aspectRatio: 1.7,
+        cancelButton: () {
+            setState(() {
+                croppedImg = null;
+            });
+            Navigator.of(context).pop();
+        },
+        okButton: (Uint8List data, String fileName) {
+            /// selected file name
+            debugPrint(fileName);
+            setState(() {  
+                croppedImg = data;
+                /// image file you can load to ui (Image.memory(croppedImg))
+            });
+            Navigator.of(context).pop();
+        },
+    ),
+    ```
 1. get device id in all available devices platform (android, ios, windows, linux, mac, web(get info details))
 
    ```dart
@@ -198,11 +221,12 @@
    ```dart
    ['aa', 'bb', 'cc', 'dd'].cRandomSelect.toString()
    ```
+
 1. Get first item from list (if list is empty then result will be null)
-    ```dart
-    ['aa', 'bb', 'cc', 'dd'].cFirst
-    ['aa', 'bb', 'cc', 'dd'].cFirstWhere((e)=>(type your condition here)))
-    ```
+   ```dart
+   ['aa', 'bb', 'cc', 'dd'].cFirst
+   ['aa', 'bb', 'cc', 'dd'].cFirstWhere((e)=>(type your condition here)))
+   ```
 
 ---
 
@@ -268,4 +292,5 @@
    ```
 
 ---
+
 ![Alt](https://repobeats.axiom.co/api/embed/2101af02ba767cc668c359f4f1167731c55e3e87.svg "Activity graph")
