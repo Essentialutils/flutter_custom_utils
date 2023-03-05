@@ -14,28 +14,29 @@
 
 1. Pick file and crop without loosing quality
 
-    ```dart
-    cPickAndCropImage(
-        context,
-        cropDisable: false,
-        aspectRatio: 1.7,
-        cancelButton: () {
-            setState(() {
-                croppedImg = null;
-            });
-            Navigator.of(context).pop();
-        },
-        okButton: (Uint8List data, String fileName) {
-            /// selected file name
-            debugPrint(fileName);
-            setState(() {  
-                croppedImg = data;
-                /// image file you can load to ui (Image.memory(croppedImg))
-            });
-            Navigator.of(context).pop();
-        },
-    ),
-    ```
+   ```dart
+   cPickAndCropImage(
+       context,
+       cropDisable: false,
+       aspectRatio: 1.7,
+       cancelButton: () {
+           setState(() {
+               croppedImg = null;
+           });
+           Navigator.of(context).pop();
+       },
+       okButton: (Uint8List data, String fileName) {
+           /// selected file name
+           debugPrint(fileName);
+           setState(() {
+               croppedImg = data;
+               /// Load image to ui using 'Image.memory(croppedImg)'
+           });
+           Navigator.of(context).pop();
+       },
+   ),
+   ```
+
 1. get device id in all available devices platform (android, ios, windows, linux, mac, web(get info details))
 
    ```dart
