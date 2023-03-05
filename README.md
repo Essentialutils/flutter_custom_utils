@@ -47,7 +47,7 @@
 
    ```dart
     cTakePicture(GlobalKey);
-    // wrap with RepaintBoundary then use kry to create image
+    // wrap with RepaintBoundary then use key to create image
     RepaintBoundary(
         key: GlobalKey,
         child:Text('data'),
