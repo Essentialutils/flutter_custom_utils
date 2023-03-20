@@ -11,8 +11,10 @@ int cGetResCrossCountGrid({
   required BuildContext context,
   required int width,
   bool logData = false,
+  double? discardSize,
 }) {
-  int count = (context.cWidth / width).round();
+  double primaryWidth = ((context.cWidth) - (discardSize ?? 0.0));
+  int count = (primaryWidth / width).round();
   if (logData) {
     cLog('GridCount => $count');
   }
@@ -30,9 +32,11 @@ double cGetResGridRatio({
   required int height,
   required int width,
   bool logData = false,
+  double? discardSize,
 }) {
-  double w = (context.cWidth / (context.cWidth / width).round());
-  double h = (context.cWidth / (context.cWidth / width));
+  double primaryWidth = ((context.cWidth) - (discardSize ?? 0.0));
+  double w = (primaryWidth / (primaryWidth / width).round());
+  double h = (primaryWidth / (primaryWidth / width));
   double asr = w / (h - (width - height));
   if (logData) {
     cLog('GridAspectRatio => $asr');
@@ -54,9 +58,11 @@ double cGetGridRatio({
   required int height,
   required int width,
   bool logData = false,
+  double? discardSize,
 }) {
-  double w = (context.cWidth / crossAxisCount);
-  double h = (context.cWidth / (context.cWidth / width));
+  double primaryWidth = ((context.cWidth) - (discardSize ?? 0.0));
+  double w = (primaryWidth / crossAxisCount);
+  double h = (primaryWidth / (primaryWidth / width));
   double asr = w / (h - (width - height));
   if (logData) {
     cLog('GridAspectRatio => $asr');

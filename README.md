@@ -83,6 +83,8 @@
 
 > Make a `responsive gridView` by using both `1 and 2`
 
+> provide `discardSize` to minus size from calculation
+
 1.  Based on your static design's `width`, calculate the responsive `grid item count`.
 
     ```dart
