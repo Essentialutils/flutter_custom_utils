@@ -3,6 +3,7 @@ import 'package:crop_image/crop_image.dart';
 import 'package:file_picker/file_picker.dart';
 import 'package:flutter/material.dart';
 import 'dart:ui' as ui;
+import 'package:flutter_custom_utils/util/context_utils.dart';
 
 ///
 /// pick file and crop if you want
@@ -18,11 +19,11 @@ cPickAndCropImage(
 }) async {
   var controller = CropController(
     aspectRatio: aspectRatio,
-    // defaultCrop: const Rect.fromLTRB(0.1, 0.1, 0.9, 0.9),
   );
   Uint8List result;
   ui.Image bitmap;
   FilePickerResult? selectedFile = await FilePicker.platform.pickFiles(
+    withData: true,
     type: FileType.custom,
     allowedExtensions: allowedExtensions,
   );
@@ -35,15 +36,18 @@ cPickAndCropImage(
           child: (cropDisable)
               ? Image.memory(selectedFile.files.first.bytes!)
               : Center(
-                  child: CropImage(
-                    controller: controller,
-                    image: Image.memory(selectedFile.files.first.bytes!),
-                    gridColor: Colors.black,
-                    gridCornerSize: 50,
-                    gridThinWidth: 1,
-                    gridThickWidth: 4,
-                    scrimColor: Colors.grey.withOpacity(0.7),
-                    alwaysShowThirdLines: true,
+                  child: SizedBox(
+                    width: context.cWidth * .6,
+                    child: CropImage(
+                      controller: controller,
+                      image: Image.memory(selectedFile.files.first.bytes!),
+                      gridColor: Colors.black,
+                      gridCornerSize: 50,
+                      gridThinWidth: 1,
+                      gridThickWidth: 4,
+                      scrimColor: Colors.grey.withOpacity(0.7),
+                      alwaysShowThirdLines: true,
+                    ),
                   ),
                 ),
         ),
