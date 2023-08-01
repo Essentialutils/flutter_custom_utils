@@ -292,6 +292,7 @@
 1. For PreferredSize
    ```dart
    Text('data').cPreferSize(20)
+   Text('data').cAspectRatio(1.2)
    ```
 
 ---

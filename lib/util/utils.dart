@@ -12,7 +12,7 @@ import 'package:flutter_custom_utils/flutter_custom_utils.dart';
 ///
 void cLog(
   String body, {
-  String n = 'oms',
+  String n = 'repad.dev',
 }) {
   log('\x1B[32m $body \x1B[0m', name: n);
 }

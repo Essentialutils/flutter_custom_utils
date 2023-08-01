@@ -242,4 +242,12 @@ extension CustomWidget on Widget {
         child: this,
         tag: tag,
       );
+
+  ///
+  /// AspectRatio widget
+  ///
+  Widget cAspectRatio(double ratio) => AspectRatio(
+        child: this,
+        aspectRatio: ratio,
+      );
 }
