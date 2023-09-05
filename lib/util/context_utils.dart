@@ -1,82 +1,53 @@
 import 'package:flutter/material.dart';
 
+/// An extension for the `BuildContext` class providing convenient access to common MediaQuery properties and theme information.
 extension ContextExt on BuildContext {
-  ///
-  /// The same of [MediaQuery.of(context).size]
-  ///
+  /// Returns the size of the screen obtained from [MediaQuery.of(context).size].
   Size get cSize => MediaQuery.of(this).size;
 
-  ///
-  /// The same of [MediaQuery.of(context)]
-  ///
+  /// Returns the `MediaQueryData` object obtained from [MediaQuery.of(context)].
   MediaQueryData get cMQuery => MediaQuery.of(this);
 
-  ///
-  /// The same of [MediaQuery.of(context).size.height]
-  ///
-
+  /// Returns the height of the screen obtained from [MediaQuery.of(context).size.height].
   double get cHeight => MediaQuery.of(this).size.height;
 
-  ///
-  /// The same of [MediaQuery.of(context).size.width]
-  ///
-
+  /// Returns the width of the screen obtained from [MediaQuery.of(context).size.width].
   double get cWidth => MediaQuery.of(this).size.width;
 
-  ///
-  /// similar to [MediaQuery.of(context).padding]
-  ///
+  /// Returns the current theme data obtained from [Theme.of(context)].
   ThemeData get cTheme => Theme.of(this);
 
-  ///
-  /// Check if dark mode theme is enable
-  ///
+  /// Checks if the dark mode theme is enabled by comparing the brightness from [Theme.of(context)].
   bool get cIsDarkMode => (Theme.of(this).brightness == Brightness.dark);
 
-  ///
-  /// give access to Theme.of(context).iconTheme.color
-  ///
+  /// Returns the icon color from the current theme obtained from [Theme.of(context).iconTheme.color].
   Color? get cIconColor => Theme.of(this).iconTheme.color;
 
-  ///
-  /// similar to [MediaQuery.of(context).padding]
-  ///
+  /// Returns the text theme from the current theme obtained from [Theme.of(context).textTheme].
   TextTheme get cTextTheme => Theme.of(this).textTheme;
 
-  ///
-  /// similar to [MediaQuery.of(context).orientation]
-  ///
+  /// Returns the orientation of the device screen obtained from [MediaQuery.of(context).orientation].
   Orientation get cOrient => MediaQuery.of(this).orientation;
 
-  ///
-  /// check if device is on landscape mode
-  ///
+  /// Checks if the device screen is in landscape mode by comparing the orientation from [MediaQuery.of(context)].
   bool get cIsLand => MediaQuery.of(this).orientation == Orientation.landscape;
 
-  ///
-  /// check if device is on portrait mode
-  ///
+  /// Checks if the device screen is in portrait mode by comparing the orientation from [MediaQuery.of(context)].
   bool get cIsPort => MediaQuery.of(this).orientation == Orientation.portrait;
 
-  ///
-  /// similar to [MediaQuery.of(this).devicePixelRatio]
-  ///
+  /// Returns the device pixel ratio obtained from [MediaQuery.of(this).devicePixelRatio].
   double get cDevicePixelRatio => MediaQuery.of(this).devicePixelRatio;
 
-  // Return true if the device is a tablet
+  /// Returns `true` if the device is identified as a tablet based on its screen size.
   bool get cIsTablet => MediaQuery.of(this).size.shortestSide > 600;
 }
 
-///
-/// get MediaQuery size
-///
+/// Get the size of the screen from a given [BuildContext].
 Size getSize(BuildContext context) {
   return MediaQuery.of(context).size;
 }
 
-///
-/// get MediaQuery size
-///
+/// Get the `MediaQueryData` object from a given [BuildContext].
 MediaQueryData mQuery(BuildContext context) {
   return MediaQuery.of(context);
 }

@@ -8,7 +8,12 @@ import 'dart:ui' as ui;
 import 'package:flutter_custom_utils/flutter_custom_utils.dart';
 
 ///
-/// log data in green color in vs code only
+/// Logs data in green color in Visual Studio Code (VS Code) console.
+///
+/// Usage:
+/// ```dart
+/// cLog("This is a green log message");
+/// ```
 ///
 void cLog(
   String body, {
@@ -18,7 +23,13 @@ void cLog(
 }
 
 ///
-/// get device id in all platform
+/// Retrieves the device ID for various platforms, including iOS, Android, Windows, Linux, Web, and macOS.
+///
+/// Usage:
+/// ```dart
+/// String deviceId = await cGetDeviceId();
+/// print("Device ID: $deviceId");
+/// ```
 ///
 Future<String> cGetDeviceId() async {
   var deviceInfo = DeviceInfoPlugin();
@@ -45,6 +56,16 @@ Future<String> cGetDeviceId() async {
   }
 }
 
+///
+/// Takes a screenshot of a widget using a [GlobalKey] and returns it as a [Uint8List] (PNG image).
+///
+/// Usage:
+/// ```dart
+/// final GlobalKey<State<StatefulWidget>> key = GlobalKey();
+/// // ...
+/// Uint8List screenshot = await cTakePicture(key);
+/// ```
+///
 Future<Uint8List> cTakePicture(GlobalKey<State<StatefulWidget>> key) async {
   RenderRepaintBoundary boundary =
       key.currentContext?.findRenderObject() as RenderRepaintBoundary;

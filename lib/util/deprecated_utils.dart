@@ -3,7 +3,7 @@ import 'package:flutter/widgets.dart';
 import 'package:flutter_custom_utils/flutter_custom_utils.dart';
 
 const _defaultText =
-    '. Current method no longer maintained. all updates are available on new method';
+    '. The existing approach is no longer being supported, and all future updates can now be found through the new method.';
 
 @Deprecated('Use cGetResCrossCountGrid()$_defaultText')
 int getResCrossCountGrid({

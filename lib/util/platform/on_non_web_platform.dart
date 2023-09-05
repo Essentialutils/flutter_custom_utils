@@ -1,9 +1,6 @@
 import 'package:flutter/foundation.dart';
 import 'dart:io';
 
-///
-/// run code on non web platform and also het current platform status
-///
 bool get cIsAndroid => Platform.isAndroid;
 bool get cIsIOS => Platform.isIOS;
 bool get cIsLinux => Platform.isLinux;

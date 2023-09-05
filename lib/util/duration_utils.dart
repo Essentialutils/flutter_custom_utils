@@ -1,47 +1,88 @@
 import 'dart:async';
 
+/// An extension for the `Duration` class providing utilities for delaying code execution.
 extension CustomDurationUtils on Duration {
-  /// Utility to delay some callback (or code execution).
+  /// Delays the execution of a callback or code by the specified duration.
   ///
-  /// Sample:
-  /// ```
+  /// Usage:
+  /// ```dart
   /// void main() {
-  ///   0.7.seconds.delay(() {
+  ///   const delayDuration = Duration(seconds: 2);
+  ///   delayDuration.cDelay(() {
+  ///     // Code to be executed after a 2-second delay.
+  ///   });
   /// }
-  ///```
-
+  /// ```
   Future cDelay([FutureOr Function()? callback]) async =>
       Future.delayed(this, callback);
 }
 
+/// An extension for the `num` class providing utilities for dealing with time durations and delaying code execution.
 extension CustomNumUtils on num {
-  /// Utility to delay some callback (or code execution).
+  /// Delays the execution of a callback or code by the specified number of seconds.
   ///
-  /// wait for provided number of seconds
-  ///
-  /// Sample:
-  /// ```
+  /// Usage:
+  /// ```dart
   /// void main() {
   ///   2.delay(() {
+  ///     // Code to be executed after a 2-second delay.
+  ///   });
   /// }
-  ///```
+  /// ```
   Future cDelay([FutureOr Function()? callback]) async => Future.delayed(
-        Duration(milliseconds: (this * 1000).round()),
+        Duration(
+          milliseconds: (this * 1000).round(),
+        ),
         callback,
       );
 
+  /// Converts a numeric value to a `Duration` representing milliseconds.
   ///
-  /// Easy way to make Durations from numbers.
+  /// Usage:
+  /// ```dart
+  /// final millisecondsDuration = 500.cMilliseconds;
+  /// ```
+  Duration get cMilliseconds => Duration(
+        microseconds: (this * 1000).round(),
+      );
+
+  /// Converts a numeric value to a `Duration` representing seconds.
   ///
-  Duration get cMilliseconds => Duration(microseconds: (this * 1000).round());
+  /// Usage:
+  /// ```dart
+  /// final secondsDuration = 5.cSeconds;
+  /// ```
+  Duration get cSeconds => Duration(
+        milliseconds: (this * 1000).round(),
+      );
 
-  Duration get cSeconds => Duration(milliseconds: (this * 1000).round());
+  /// Converts a numeric value to a `Duration` representing minutes.
+  ///
+  /// Usage:
+  /// ```dart
+  /// final minutesDuration = 10.cMinutes;
+  /// ```
+  Duration get cMinutes => Duration(
+        seconds: (this * Duration.secondsPerMinute).round(),
+      );
 
-  Duration get cMinutes =>
-      Duration(seconds: (this * Duration.secondsPerMinute).round());
+  /// Converts a numeric value to a `Duration` representing hours.
+  ///
+  /// Usage:
+  /// ```dart
+  /// final hoursDuration = 2.cHours;
+  /// ```
+  Duration get cHours => Duration(
+        minutes: (this * Duration.minutesPerHour).round(),
+      );
 
-  Duration get cHours =>
-      Duration(minutes: (this * Duration.minutesPerHour).round());
-
-  Duration get cDays => Duration(hours: (this * Duration.hoursPerDay).round());
+  /// Converts a numeric value to a `Duration` representing days.
+  ///
+  /// Usage:
+  /// ```dart
+  /// final daysDuration = 3.cDays;
+  /// ```
+  Duration get cDays => Duration(
+        hours: (this * Duration.hoursPerDay).round(),
+      );
 }

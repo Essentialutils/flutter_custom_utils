@@ -1,7 +1,6 @@
 name: flutter_custom_utils
-description: It is designed to simplify code and support utilities for personal
-  and commercial use
-version: 0.4.13
+description: Streamline your code and enhance personal utility with this meticulously crafted Flutter package, tailored to simplify your development tasks. and commercial use
+version: 0.4.14
 homepage: https://repad.dev
 repository: https://github.com/Essentialutils/flutter_custom_utils
 
@@ -11,9 +10,9 @@ environment:
   # flutter: ">=1.17.0"
 
 dependencies:
-  crop_image: ^1.0.10
-  device_info_plus: ^9.0.2
-  file_picker: ^5.3.3
+  crop_image: ^1.0.11
+  device_info_plus: ^9.0.3
+  file_picker: ^5.5.0
   flutter:
     sdk: flutter
   flutter_web_plugins:
