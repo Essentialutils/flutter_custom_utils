@@ -3,7 +3,7 @@ import 'package:crop_image/crop_image.dart';
 import 'package:file_picker/file_picker.dart';
 import 'package:flutter/material.dart';
 import 'dart:ui' as ui;
-import 'package:flutter_custom_utils/util/context_utils.dart';
+import 'package:flutter_custom_utils/flutter_custom_utils.dart';
 
 /// Opens a file picker dialog allowing the user to select an image file, optionally crop it, and then perform actions based on user interaction.
 ///
