@@ -150,9 +150,51 @@
 
 [![for-date time](https://img.shields.io/badge/for-Date_time-green?style=for-the-badge)]()
 
-1. add TimeOfDay to DateTime
+1. This method combines the date part of the current [`DateTime`] instance with the hour and minute components from the provided [`time`].
+
+   > cApplied()
+
    ```dart
-      DateTime.now().cApplied(TimeOfDay.now())
+   final date = DateTime.now();
+   final time = TimeOfDay(hour: 15, minute: 30);
+   final combinedDateTime = date.cApplied(time);
+   print(combinedDateTime); // Output: 2023-09-15:30:00.000
+   ```
+
+1. Optionally, you can provide a custom [`format`] string to specify the desired date format. If [`format`] is not provided, the default format `dd/MM/yyyy` will be used.
+
+   > cGetFormattedDate()
+
+   ```dart
+   final date = DateTime.now();
+   final formattedDate = date.cGetFormattedDate(format: 'MM-dd-yyyy');
+   print(formattedDate); // Output: 09-13-2023
+   ```
+
+   ### OR
+
+   ```dart
+   String date = '2023-09-13';
+   String formattedDate = date.cGetFormattedDate(format: 'MMMM d, y');
+   // Result: 'September 13, 2023'
+   ```
+
+1. This method calculates the difference between the current [`DateTime`] instance and the current date and time and provides an aging description.
+
+   > cDateToAging()
+
+   ```dart
+   final pastDate = DateTime(2022, 3, 10);
+   final agingString = pastDate.cDateToAging();
+   print(agingString); // Output: "1 year ago"
+   ```
+
+   ### OR
+
+   ```dart
+   String date = '2023-08-01T12:34:56';
+   String agingDescription = date.cDateToAging();
+   // Result: '1 month ago'
    ```
 
 ---
@@ -161,21 +203,21 @@
 
 1. Get the MediaQuery
 
-   ```dart
-   context.cIsTablet
-   context.cSize    // getSize(context)
-   context.cMQuery  // mQuery(context)
-   context.cWidth
-   context.cHeight
-   context.cTheme
-   context.cIsDarkMode
-   context.cIconColor
-   context.cTextTheme
-   context.cOrient   // orientation
-   context.cIsLand   // landscape
-   context.cIsPort   // portrait
-   context.cDevicePixelRatio
-   ```
+```dart
+context.cIsTablet
+context.cSize    // getSize(context)
+context.cMQuery  // mQuery(context)
+context.cWidth
+context.cHeight
+context.cTheme
+context.cIsDarkMode
+context.cIconColor
+context.cTextTheme
+context.cOrient   // orientation
+context.cIsLand   // landscape
+context.cIsPort   // portrait
+context.cDevicePixelRatio
+```
 
 ---
 
