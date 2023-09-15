@@ -33,7 +33,6 @@ import 'package:flutter_custom_utils/flutter_custom_utils.dart';
 /// ```
 ///
 /// This function opens a file picker dialog, allows the user to choose an image file, and optionally provides cropping functionality. Once the user confirms or cancels the selection, the appropriate callback is invoked to handle the chosen image data.
-
 cPickAndCropImage(
   BuildContext context, {
   cropDisable = false,

@@ -277,16 +277,18 @@ context.cDevicePixelRatio
 
 [![for-color](https://img.shields.io/badge/for-color-green?style=for-the-badge)]()
 
-1.  Get color from hash code
+1.  This extension provides a method to convert a Flutter `Color` object to its hexadecimal representation with an optional leading hash sign. The resulting hexadecimal string includes the alpha, red, green, and blue components of the color.
 
     ```dart
-    CHColor.fromHex('#fffff')
+    final color = Color(0xFF42A5F5);
+    final hexString = color.cToHex(); // Returns: "#FF42A5F5"
     ```
 
-1.  Get hash code from color
+1.  This extension provides a method to convert a hexadecimal color code represented as a String into a Flutter `Color` object. The color code can optionally include a leading hash sign ('#'). If the input color code has 6 or 7 characters (with or without the hash sign), the method will assume it represents a color with an alpha component and append 'ff' to the color code to make it fully opaque.
 
     ```dart
-    Color.fromRGBO(250, 250, 250, 0.1).toHex()
+    final colorCode = '#FF42A5F5';
+    final color = colorCode.cToColor(); // Returns: Color(0xFF42A5F5)
     ```
 
 ---

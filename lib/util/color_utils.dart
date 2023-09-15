@@ -1,37 +1,78 @@
 import 'package:flutter/widgets.dart';
 
-/// An extension for the `Color` class to provide additional functionality for working with hexadecimal color representations.
-extension CHColor on Color {
-  /// Creates a `Color` object from a hexadecimal color string.
+extension ColorExtension on Color {
+  /// This extension provides a method to convert a Flutter `Color` object
+  /// to its hexadecimal representation with an optional leading hash sign.
+  /// The resulting hexadecimal string includes the alpha, red, green, and blue
+  /// components of the color.
   ///
-  /// The [hexString] parameter should be a valid hexadecimal color representation.
-  /// If the string does not include the '#' sign, it will be added automatically.
-  /// If the string has only 6 characters, it's assumed to represent RGB values,
-  /// and an alpha value of 255 (fully opaque) will be added.
-  ///
-  /// Example usage:
+  /// Usage:
   /// ```dart
-  /// final color = Color.fromHex('#FFA500'); // Creates an orange Color object.
+  /// final color = Color(0xFF42A5F5);
+  /// final hexString = color.cToHex(); // Returns: "#FF42A5F5"
   /// ```
-  static Color fromHex(String hexString) {
-    final buffer = StringBuffer();
-    if (hexString.length == 6 || hexString.length == 7) buffer.write('ff');
-    buffer.write(hexString.replaceFirst('#', ''));
-    return Color(int.parse(buffer.toString(), radix: 16));
-  }
-
-  /// Converts a `Color` object to its hexadecimal representation.
   ///
-  /// The [leadingHashSign] parameter determines whether to include the '#' sign in the output.
+  /// Parameters:
+  /// - [leadingHashSign]: A boolean value indicating whether to include a
+  ///   leading hash sign '#' in the hexadecimal representation. By default,
+  ///   it includes the hash sign.
   ///
-  /// Example usage:
+  /// Example:
   /// ```dart
-  /// final color = Color(0xFFFFA500); // Creates an orange Color object.
-  /// final hex = color.toHex(); // Returns '#FFA500'.
+  /// final color = Color(0xFF42A5F5);
+  ///
+  /// // Without leading hash sign
+  /// final hexStringWithoutHash = color.cToHex(leadingHashSign: false);
+  /// // Returns: "FF42A5F5"
+  ///
+  /// // With leading hash sign
+  /// final hexStringWithHash = color.cToHex();
+  /// // Returns: "#FF42A5F5"
   /// ```
-  String toHex({bool leadingHashSign = true}) => '${leadingHashSign ? '#' : ''}'
+  String cToHex({bool leadingHashSign = true}) =>
+      '${leadingHashSign ? '#' : ''}'
       '${alpha.toRadixString(16).padLeft(2, '0')}'
       '${red.toRadixString(16).padLeft(2, '0')}'
       '${green.toRadixString(16).padLeft(2, '0')}'
       '${blue.toRadixString(16).padLeft(2, '0')}';
+}
+
+extension ColorCodeExtension on String {
+  /// This extension provides a method to convert a hexadecimal color code
+  /// represented as a String into a Flutter `Color` object. The color code can
+  /// optionally include a leading hash sign ('#'). If the input color code
+  /// has 6 or 7 characters (with or without the hash sign), the method will
+  /// assume it represents a color with an alpha component and append 'ff' to
+  /// the color code to make it fully opaque.
+  ///
+  /// Usage:
+  /// ```dart
+  /// final colorCode = '#FF42A5F5';
+  /// final color = colorCode.cToColor(); // Returns: Color(0xFF42A5F5)
+  /// ```
+  ///
+  /// Example:
+  /// ```dart
+  /// final colorCodeWithHash = '#FF42A5F5';
+  /// final colorWithHash = colorCodeWithHash.cToColor();
+  /// // Returns: Color(0xFF42A5F5)
+  ///
+  /// final colorCodeWithoutHash = 'FF42A5F5';
+  /// final colorWithoutHash = colorCodeWithoutHash.cToColor();
+  /// // Returns: Color(0xFF42A5F5)
+  /// ```
+  Color cToColor() {
+    final buffer = StringBuffer();
+
+    /// Check if the color code has 6 or 7 characters.
+    if ((this).length == 6 || (this).length == 7) {
+      buffer.write('ff');
+    }
+
+    /// Remove any leading hash sign ('#') and append the remaining code.
+    buffer.write((this).replaceFirst('#', ''));
+
+    /// Parse the hexadecimal color code and return a Color object.
+    return Color(int.parse(buffer.toString(), radix: 16));
+  }
 }
