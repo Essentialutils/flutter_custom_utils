@@ -150,6 +150,35 @@
 
 [![for-date time](https://img.shields.io/badge/for-Date_time-green?style=for-the-badge)]()
 
+1. An extension for nullable [`TimeOfDay`] objects, providing a method to convert them to a formatted string in AM/PM format or display 'Invalid date' if the [`TimeOfDay`] object is null.
+
+   > cTimeOfDayToString()
+
+   ```dart
+   TimeOfDay? timeOfDay = TimeOfDay(hour: 14, minute: 30);
+   String formattedTime = timeOfDay.cTimeOfDayToString();
+   print(formattedTime); // Output: "2:30 PM"
+
+   timeOfDay = null;
+   formattedTime = timeOfDay.cTimeOfDayToString();
+   print(formattedTime); // Output: "Invalid date"
+   ```
+
+1. This method attempts to parse the input string in both 12-hour and 24-hour time formats and returns a [`TimeOfDay`] object if parsing is successful, or null if the string cannot be parsed as a valid time.
+
+   > cToTimeOfDay()
+
+   ```dart
+   String timeString = "2:30 PM";
+   TimeOfDay? timeOfDay = timeString.cToTimeOfDay();
+
+   if (timeOfDay != null) {
+       print("Parsed time: $timeOfDay");
+   } else {
+       print("Invalid time format");
+   }
+   ```
+
 1. This method combines the date part of the current [`DateTime`] instance with the hour and minute components from the provided [`time`].
 
    > cApplied()
