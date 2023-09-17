@@ -1,5 +1,3 @@
----
-
 [![](https://img.shields.io/pub/publisher/flutter_custom_utils?label=From)](https://repadtech.com/)
 [![](https://img.shields.io/github/license/Essentialutils/flutter_custom_utils)](https://github.com/Essentialutils/flutter_custom_utils/blob/main/LICENSE)
 [![pub package](https://img.shields.io/pub/v/flutter_custom_utils.svg?logo=dart&logoColor=00b9fc)](https://pub.dev/packages/flutter_custom_utils)
@@ -8,11 +6,13 @@
 [![](https://img.shields.io/pub/likes/flutter_custom_utils?logo=dart&logoColor=00b9fc)](https://pub.dev/packages/flutter_custom_utils)
 [![](https://badgen.net/pub/flutter-platform/flutter_custom_utils)](https://pub.dev/packages/flutter_custom_utils)
 
----
+> **Note:** This library seamlessly functions across all platforms, ensuring compatibility without any issues.
+
+--------
 
 [![utilities](https://img.shields.io/badge/=>-utilities-green?style=for-the-badge)]()
 
-1. Pick file and crop without loosing quality
+1. Opens a file picker dialog allowing the user to select an image file, optionally crop it, and then perform actions based on user interaction.
 
    ```dart
    cPickAndCropImage(
@@ -37,13 +37,13 @@
    ),
    ```
 
-1. get device id in all available devices platform (android, ios, windows, linux, mac, web(get info details))
+1. get device id in all available devices platform (**android**, **ios**, **windows**, **linux**, **mac**, **web**(get info details))
 
    ```dart
     await cGetDeviceId()
    ```
 
-1. Widget to png
+1. Takes a screenshot of a widget using a [**GlobalKey**] and returns it as a [**Uint8List**] (PNG image).
 
    ```dart
     cTakePicture(GlobalKey);
