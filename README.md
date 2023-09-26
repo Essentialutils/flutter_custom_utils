@@ -8,7 +8,7 @@
 
 > **Note:** This library seamlessly functions across all platforms, ensuring compatibility without any issues.
 
---------
+---
 
 [![utilities](https://img.shields.io/badge/=>-utilities-green?style=for-the-badge)]()
 
@@ -226,6 +226,25 @@
    // Result: '1 month ago'
    ```
 
+1. Converts a string representation of a date and time into a [`DateTime`] object.
+
+   > cGetDateFromString()
+
+   ```Dart
+   // Example date and time string
+   String dateString = "2023-09-26 14:30:00";
+   // Attempt to parse the date string into a DateTime object
+   DateTime? dateTime = dateString.cGetDateFromString();
+   // Check if parsing was successful
+   if (dateTime != null) {
+    print("Parsed DateTime: $dateTime");
+   } else {
+    print("Failed to parse the string as DateTime.");
+   }
+   ```
+
+
+
 ---
 
 [![for-MediaQuery](https://img.shields.io/badge/for-MediaQuery-green?style=for-the-badge)]()
@@ -246,7 +265,7 @@ context.cOrient   // orientation
 context.cIsLand   // landscape
 context.cIsPort   // portrait
 context.cDevicePixelRatio
-```
+````
 
 ---
 

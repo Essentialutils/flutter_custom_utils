@@ -126,6 +126,33 @@ extension StringDateExtension on String {
     }
   }
 
+  /// Converts a string representation of a date and time into a [DateTime] object.
+  ///
+  /// Returns:
+  /// - A [DateTime] object if the parsing is successful.
+  /// - `null` if the parsing fails or an exception occurs.
+  ///
+  /// ```Dart
+  /// // Example date and time string
+  /// String dateString = "2023-09-26 14:30:00";
+  /// // Attempt to parse the date string into a DateTime object
+  /// DateTime? dateTime = dateString.cGetDateFromString();
+  /// // Check if parsing was successful
+  /// if (dateTime != null) {
+  ///   print("Parsed DateTime: $dateTime");
+  /// } else {
+  ///   print("Failed to parse the string as DateTime.");
+  /// }
+  /// ```
+  ///
+  DateTime? cGetDateFromString() {
+    try {
+      return DateTime.parse(this);
+    } catch (e) {
+      return null;
+    }
+  }
+
   /// Converts a date string into a human-readable aging format.
   ///
   /// Returns a human-readable aging description of the date string.
