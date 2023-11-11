@@ -344,3 +344,39 @@ extension CustomWidget on Widget {
         aspectRatio: ratio,
       );
 }
+
+/// A set of extensions on the base [Widget] class to add custom banner functionality.
+extension CustomWidgetBanner on Widget {
+  /// Wraps the widget with a banner if not disabled.
+  ///
+  /// If [disable] is true, the original widget is returned unchanged.
+  /// Otherwise, a [Banner] widget is added with the specified [location], [message],
+  /// [color], and optional [crop] parameters.
+  ///
+  /// Example:
+  ///
+  /// ```dart
+  /// Widget myWidget = ...;
+  /// Widget bannerWidget = myWidget.cBanner(
+  ///   disable: false,
+  ///   location: BannerLocation.topStart,
+  ///   message: 'Custom Banner',
+  ///   color: Colors.red
+  /// );
+  /// ```
+  Widget cBanner({
+    bool disable = false,
+    required BannerLocation location,
+    required String message,
+    required Color color,
+    double crop = 0,
+  }) =>
+      disable
+          ? this
+          : Banner(
+              message: message,
+              location: location,
+              color: color,
+              child: this,
+            ).cClipAll(crop);
+}

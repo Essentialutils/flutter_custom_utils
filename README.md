@@ -243,8 +243,6 @@
    }
    ```
 
-
-
 ---
 
 [![for-MediaQuery](https://img.shields.io/badge/for-MediaQuery-green?style=for-the-badge)]()
@@ -265,7 +263,7 @@ context.cOrient   // orientation
 context.cIsLand   // landscape
 context.cIsPort   // portrait
 context.cDevicePixelRatio
-````
+```
 
 ---
 
@@ -385,6 +383,17 @@ context.cDevicePixelRatio
    ```dart
    Text('data').cPreferSize(20)
    Text('data').cAspectRatio(1.2)
+   ```
+1. A set of extensions on the base [Widget] class to add custom banner functionality.
+
+   ```dart
+   Widget myWidget = ...;
+   Widget bannerWidget = myWidget.cBanner(
+       disable: false,
+       location: BannerLocation.topStart,
+       message: 'Custom Banner',
+       color: Colors.red
+   );
    ```
 
 ---
