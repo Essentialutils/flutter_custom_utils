@@ -15,3 +15,4 @@ export 'package:flutter_custom_utils/util/double_utils.dart';
 export 'package:flutter_custom_utils/util/deprecated_utils.dart';
 export 'package:flutter_custom_utils/util/file_pick_and_crop.dart';
 export 'package:flutter_custom_utils/util/time_of_day_utils.dart';
+export 'package:flutter_custom_utils/util/id.dart';
