@@ -1,2 +1,2 @@
-## 0.4.21
+## 0.4.22
 * Opt for the latest version consistently.

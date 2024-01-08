@@ -3,8 +3,8 @@ class ID {
   static const int MACHINE_ID_BITS = 5;
   static const int SEQUENCE_BITS = 12;
 
-  static final int MAX_MACHINE_ID = (1 << MACHINE_ID_BITS) - 1;
-  static final int MAX_SEQUENCE = (1 << SEQUENCE_BITS) - 1;
+  static const int MAX_MACHINE_ID = (1 << MACHINE_ID_BITS) - 1;
+  static const int MAX_SEQUENCE = (1 << SEQUENCE_BITS) - 1;
 
   static int lastTimestamp = -1;
   static int sequence = 0;
@@ -13,7 +13,7 @@ class ID {
 
   ID(this.machineId) {
     if (machineId < 0 || machineId > MAX_MACHINE_ID) {
-      throw Exception("Machine ID should be between 0 and $MAX_MACHINE_ID");
+      throw Exception('Machine ID should be between 0 and $MAX_MACHINE_ID');
     }
   }
 
@@ -29,7 +29,7 @@ class ID {
     int timestamp = DateTime.now().millisecondsSinceEpoch - EPOCH;
 
     if (timestamp < lastTimestamp) {
-      throw Exception("Clock moved backwards. Rejecting request.");
+      throw Exception('Clock moved backwards. Rejecting request.');
     }
 
     if (timestamp == lastTimestamp) {
@@ -54,8 +54,8 @@ class ID {
     int timestamp = DateTime.now().millisecondsSinceEpoch;
     String randomStr(int length) {
       const characters =
-          "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
-      String randomString = "";
+          'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
+      String randomString = '';
       for (int i = 0; i < length; i++) {
         int randomIndex =
             DateTime.now().millisecondsSinceEpoch % characters.length;

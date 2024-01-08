@@ -3,7 +3,8 @@ import 'package:crop_image/crop_image.dart';
 import 'package:file_picker/file_picker.dart';
 import 'package:flutter/material.dart';
 import 'dart:ui' as ui;
-import 'package:flutter_custom_utils/flutter_custom_utils.dart';
+
+const oneBytes = 1048576;
 
 /// Opens a file picker dialog allowing the user to select an image file, optionally crop it, and then perform actions based on user interaction.
 ///
@@ -39,76 +40,109 @@ cPickAndCropImage(
   Widget? title,
   aspectRatio = 1.7,
   allowedExtensions = const ['png', 'jpg', 'jpeg'],
+  int? maxFileSizeInBytes,
   required Function(Uint8List data, String fileName) okButton,
   required Function() cancelButton,
+  Function(String message)? errors,
 }) async {
   var controller = CropController(
     aspectRatio: aspectRatio,
   );
+
   Uint8List result;
   ui.Image bitmap;
+
+  bool active = true;
+
+  String processing =
+      'Upon processing the image, please remain patient until the completion of the task. ';
+
   FilePickerResult? selectedFile = await FilePicker.platform.pickFiles(
     withData: true,
     type: FileType.custom,
     allowedExtensions: allowedExtensions,
   );
+
   if (selectedFile != null) {
-    showDialog(
-      context: context,
-      builder: (BuildContext context) => AlertDialog.adaptive(
-        title: title,
-        content: SingleChildScrollView(
-          child: (cropDisable)
-              ? Image.memory(
-                  selectedFile.files.first.bytes!,
-                )
-              : Center(
-                  child: SizedBox(
-                    width: context.cWidth * .6,
-                    child: CropImage(
-                      controller: controller,
-                      image: Image.memory(
-                        selectedFile.files.first.bytes!,
+    if (maxFileSizeInBytes != null &&
+        selectedFile.files.first.size > maxFileSizeInBytes) {
+      errors?.call(
+        'The file is too big required size is ${maxFileSizeInBytes / oneBytes} MB and provided ${selectedFile.files.first.size / oneBytes} MB',
+      );
+    } else {
+      showDialog(
+        barrierDismissible: false,
+        context: context,
+        builder: (BuildContext context) => AlertDialog.adaptive(
+          title: title,
+          content: SingleChildScrollView(
+            child: (cropDisable)
+                ? Image.memory(
+                    selectedFile.files.first.bytes!,
+                  )
+                : Center(
+                    child: SizedBox(
+                      width: MediaQuery.of(context).size.width * 0.6,
+                      child: CropImage(
+                        controller: controller,
+                        image: Image.memory(
+                          selectedFile.files.first.bytes!,
+                        ),
+                        gridColor: Colors.black,
+                        gridCornerSize: 50,
+                        gridThinWidth: 1,
+                        gridThickWidth: 4,
+                        scrimColor: Colors.grey.withOpacity(0.7),
+                        alwaysShowThirdLines: true,
                       ),
-                      gridColor: Colors.black,
-                      gridCornerSize: 50,
-                      gridThinWidth: 1,
-                      gridThickWidth: 4,
-                      scrimColor: Colors.grey.withOpacity(0.7),
-                      alwaysShowThirdLines: true,
                     ),
                   ),
-                ),
-        ),
-        actions: [
-          TextButton(
-            onPressed: cancelButton,
-            child: const Text('Cancel'),
           ),
-          TextButton(
-            onPressed: () async => {
-              if (!cropDisable)
-                {
-                  bitmap = await controller.croppedBitmap(),
-                  result = (await bitmap.toByteData(
-                    format: ui.ImageByteFormat.png,
-                  ))!
-                      .buffer
-                      .asUint8List(),
-                  okButton(result, selectedFile.files.first.name),
+          actions: [
+            TextButton(
+              onPressed: () {
+                if (active) {
+                  cancelButton();
+                } else {
+                  errors?.call(processing);
                 }
-              else
-                {
-                  okButton(
-                    selectedFile.files.first.bytes!,
-                    selectedFile.files.first.name,
-                  ),
-                },
-            },
-            child: const Text('Submit'),
-          ),
-        ],
-      ),
-    );
+              },
+              child: const Text('Cancel'),
+            ),
+            TextButton(
+              onPressed: () async => {
+                if (active)
+                  {
+                    if (!cropDisable)
+                      {
+                        active = false,
+                        bitmap = await controller.croppedBitmap(),
+                        result = (await bitmap.toByteData(
+                          format: ui.ImageByteFormat.png,
+                        ))!
+                            .buffer
+                            .asUint8List(),
+                        okButton(result, selectedFile.files.first.name),
+                        active = true,
+                      }
+                    else
+                      {
+                        okButton(
+                          selectedFile.files.first.bytes!,
+                          selectedFile.files.first.name,
+                        ),
+                      },
+                  }
+                else
+                  {
+                    errors?.call(processing),
+                  },
+              },
+              child: const Text('Submit'),
+            ),
+          ],
+        ),
+      );
+    }
   }
 }
