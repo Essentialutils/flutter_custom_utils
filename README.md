@@ -395,7 +395,14 @@ context.cDevicePixelRatio
        color: Colors.red
    );
    ```
-
+## Contributers
+* Nasif A ( Developer )
+* Abdulla Ramees PK ( Developer )
+* Fasna sherin P ( Developer )
+* Sharun MP ( Developer )
+* Shimna AO ( Developer )
+* Nashwa K ( Developer )
+* Sharafas OM ( Maintainer and Publisher )
 ---
 
 ![Alt](https://repobeats.axiom.co/api/embed/2101af02ba767cc668c359f4f1167731c55e3e87.svg "Activity graph")
