@@ -4,6 +4,8 @@ import 'package:file_picker/file_picker.dart';
 import 'package:flutter/material.dart';
 import 'dart:ui' as ui;
 
+import 'package:flutter/widgets.dart';
+
 const oneBytes = 1048576;
 
 /// Opens a file picker dialog allowing the user to select an image file, optionally crop it, and then perform actions based on user interaction.
@@ -39,12 +41,13 @@ cPickAndCropImage(
   cropDisable = false,
   Widget? title,
   aspectRatio = 1.7,
-  allowedExtensions = const ['png', 'jpg', 'jpeg'],
+  allowedExtensions = const ['png', 'jpg', 'jpeg', 'webp'],
   int? maxFileSizeInBytes,
   required Function(Uint8List data, String fileName) okButton,
   required Function() cancelButton,
   Function(String message)? errors,
 }) async {
+  var scrollController = ScrollController();
   var controller = CropController(
     aspectRatio: aspectRatio,
   );
@@ -70,33 +73,44 @@ cPickAndCropImage(
         'The file is too big required size is ${maxFileSizeInBytes / oneBytes} MB and provided ${selectedFile.files.first.size / oneBytes} MB',
       );
     } else {
-      showDialog(
+      showAdaptiveDialog(
         barrierDismissible: false,
         context: context,
         builder: (BuildContext context) => AlertDialog.adaptive(
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(10),
+          ),
           title: title,
-          content: SingleChildScrollView(
-            child: (cropDisable)
-                ? Image.memory(
-                    selectedFile.files.first.bytes!,
-                  )
-                : Center(
-                    child: SizedBox(
-                      width: MediaQuery.of(context).size.width * 0.6,
-                      child: CropImage(
-                        controller: controller,
-                        image: Image.memory(
-                          selectedFile.files.first.bytes!,
+          content: Scrollbar(
+            controller: scrollController,
+            thumbVisibility: true,
+            trackVisibility: true,
+            thickness: 10,
+            radius: Radius.zero,
+            child: SingleChildScrollView(
+              controller: scrollController,
+              child: (cropDisable)
+                  ? Image.memory(
+                      selectedFile.files.first.bytes!,
+                    )
+                  : Center(
+                      child: SizedBox(
+                        width: MediaQuery.of(context).size.width * 0.6,
+                        child: CropImage(
+                          controller: controller,
+                          image: Image.memory(
+                            selectedFile.files.first.bytes!,
+                          ),
+                          gridColor: Colors.black,
+                          gridCornerSize: 50,
+                          gridThinWidth: 1,
+                          gridThickWidth: 4,
+                          scrimColor: Colors.grey.withOpacity(0.7),
+                          alwaysShowThirdLines: true,
                         ),
-                        gridColor: Colors.black,
-                        gridCornerSize: 50,
-                        gridThinWidth: 1,
-                        gridThickWidth: 4,
-                        scrimColor: Colors.grey.withOpacity(0.7),
-                        alwaysShowThirdLines: true,
                       ),
                     ),
-                  ),
+            ),
           ),
           actions: [
             TextButton(
