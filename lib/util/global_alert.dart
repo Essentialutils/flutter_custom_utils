@@ -7,7 +7,11 @@ void cShowAlwaysOnTopAlert({
   required BuildContext context,
   required String message,
   String? title,
+  String? okText,
   Function()? ok,
+  String? cancelText,
+  Function()? cancel,
+  double width = 400,
 }) {
   if (cAlertOverlayEntry != null) {
     // If an alert is already being shown, remove it first
@@ -19,6 +23,10 @@ void cShowAlwaysOnTopAlert({
       message: message,
       title: title,
       ok: ok,
+      okText: okText,
+      cancelText: cancelText,
+      cancel: cancel,
+      width: width,
     ),
   );
 
@@ -43,7 +51,7 @@ class TopAlert extends StatefulWidget {
     super.key,
     this.title,
     required this.message,
-    this.width = 400,
+    required this.width,
     this.cancel,
     this.ok,
     this.okText,
