@@ -12,6 +12,20 @@
 
 [![utilities](https://img.shields.io/badge/=>-utilities-green?style=for-the-badge)]()
 
+1. Global Overlay Alert: This alert will remain at the top of the screen at all times until it is closed.
+
+   ```dart
+   cShowAlwaysOnTopAlert(
+        context: context,
+        title: "Alert",
+        message: "Testing...............",
+        ok: () {
+            cCloseAlwaysOnTopAlert();
+        },
+    );
+
+   ```
+
 1. Opens a file picker dialog allowing the user to select an image file, optionally crop it, and then perform actions based on user interaction.
 
    ```dart
@@ -395,14 +409,17 @@ context.cDevicePixelRatio
        color: Colors.red
    );
    ```
+
 ## Contributers
-* Nasif A ( Developer )
-* Abdulla Ramees PK ( Developer )
-* Fasna sherin P ( Developer )
-* Sharun MP ( Developer )
-* Shimna AO ( Developer )
-* Nashwa K ( Developer )
-* Sharafas OM ( Maintainer and Publisher )
+
+- Nasif A ( Developer )
+- Abdulla Ramees PK ( Developer )
+- Fasna sherin P ( Developer )
+- Sharun MP ( Developer )
+- Shimna AO ( Developer )
+- Nashwa K ( Developer )
+- Sharafas OM ( Maintainer and Publisher )
+
 ---
 
 ![Alt](https://repobeats.axiom.co/api/embed/2101af02ba767cc668c359f4f1167731c55e3e87.svg "Activity graph")
