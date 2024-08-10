@@ -4,8 +4,6 @@ import 'package:file_picker/file_picker.dart';
 import 'package:flutter/material.dart';
 import 'dart:ui' as ui;
 
-import 'package:flutter/widgets.dart';
-
 const oneBytes = 1048576;
 
 /// Opens a file picker dialog allowing the user to select an image file, optionally crop it, and then perform actions based on user interaction.

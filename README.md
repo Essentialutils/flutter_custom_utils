@@ -355,6 +355,21 @@ context.cDevicePixelRatio
 
 [![for-widget](https://img.shields.io/badge/for-widget-green?style=for-the-badge)]()
 
+1. A customizable widget that wraps its child with hover and tap functionality.
+
+   ```dart
+   CClick(
+    onTap: () => print('Tapped!'),
+    onHover: (isHovering) => print('Hover state: $isHovering'),
+    child: Container(
+        width: 100,
+        height: 100,
+        color: Colors.blue,
+        child: Center(child: Text('Click me')),
+    ),
+   )
+   ```
+
 1. Allows you to handle `(padding/margin)`
 
    ```dart
