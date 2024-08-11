@@ -329,7 +329,10 @@ extension CustomWidget on Widget {
   ///
   /// This extension wraps the widget with a [Hero], enabling you to use it in hero animations.
   Widget cHero(Object tag) => Hero(
-        child: this,
+        child: Material(
+          type: MaterialType.transparency,
+          child: this,
+        ),
         tag: tag,
       );
 
