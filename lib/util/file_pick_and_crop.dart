@@ -4,6 +4,8 @@ import 'package:file_picker/file_picker.dart';
 import 'package:flutter/material.dart';
 import 'dart:ui' as ui;
 
+import 'package:flutter_custom_utils/flutter_custom_utils.dart';
+
 const oneBytes = 1048576;
 
 /// Opens a file picker dialog allowing the user to select an image file, optionally crop it, and then perform actions based on user interaction.
@@ -157,4 +159,28 @@ cPickAndCropImage(
       );
     }
   }
+}
+
+/// Returns a URL for a placeholder image with the specified dimensions and colors.
+///
+/// @param w The width of the placeholder image.
+/// @param h The height of the placeholder image.
+/// @param backgroundColor The background color of the placeholder image in hex format. Defaults to grey.
+/// @param textColor The text color of the placeholder image in hex format. Defaults to white.
+///
+/// @return A URL for the placeholder image.
+///
+/// Example usage:
+///
+/// ```dart
+/// String url = getPlaceHolderImage(w: 200, h: 100, backgroundColor: "FF0000", textColor: "00FF00");
+/// print(url); // Output: https://placehold.co/200x100/FF0000/00FF00.webp
+/// ```
+String getPlaceHolderImage({
+  required double w,
+  required double h,
+  String? backgroundColor,
+  String textColor = "FFFFFF",
+}) {
+  return "https://placehold.co/${w}x$h/${(backgroundColor ?? Colors.grey.cToHex()).replaceAll('#', '')}/${textColor.replaceAll('#', '')}.webp";
 }

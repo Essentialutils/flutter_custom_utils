@@ -12,6 +12,13 @@
 
 [![utilities](https://img.shields.io/badge/=>-utilities-green?style=for-the-badge)]()
 
+1. Returns a URL for a placeholder image with the specified dimensions and colors.
+
+   ```dart
+   String url = getPlaceHolderImage(w: 200, h: 100, backgroundColor: "FF0000", textColor: "00FF00");
+   print(url); // Output: https://placehold.co/200x100/FF0000/00FF00.webp
+   ```
+
 1. Global Overlay Alert: This alert will remain at the top of the screen at all times until it is closed.
 
    ```dart
